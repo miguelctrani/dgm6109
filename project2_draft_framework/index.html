@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+
+		<meta charset="utf-8">
+
+		<title>flow chart</title>
+		
+		<link rel="stylesheet" href="https://drive.google.com/file/d/1JuhNeUIyb9n4jKSE-NwSwi5MNifb3QoB/view?usp=sharing"> 
+
+<head>
+ 
+    
+    <meta charset="UTF-8">
+    <title>Pet Naming System</title>
+    <style>
+        /* Optional: minimal styling for clarity */
+        label { display: block; margin-top: 10px; }
+        #output { margin-top: 20px; color: #333; border: 1px solid #aaa; padding: 10px; min-height: 30px; }
+        button { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Name Your Pet!</h1>
+    <form id="petForm" action="javascript:void(0);">
+        <label>
+            What species of pet are you naming?
+            <input type="text" id="species" placeholder="Enter species (cat, dog, pig)" required>
+        </label>
+        <label>
+            What is your pet’s gender?
+            <select id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+        </label>
+        <label>
+            Which name do you want to choose for this pet?
+            <select id="petName">
+                <option value="Whiskers">Whiskers</option>
+                <option value="Spot">Spot</option>
+                <option value="Porky">Porky</option>
+                <option value="Daisy">Daisy</option>
+                <option value="King">King</option>
+                <option value="Princess">Princess</option>
+            </select>
+        </label>
+        <br>
+        <button type="button" id="submit">Submit</button>
+        <button type="button" id="reset" hidden>Reset</button>
+    </form>
+    <div id="output"></div>
+    <!-- Link your JS below -->
+    <script src="yourScript.js"></script>
+</body>
+</html>
