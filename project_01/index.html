@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Van City - Discover Vancouver Events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-button {
+            background-color: white;
+            color: #667eea;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background-color: #f0f0f0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .about-section a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+
+        /* Main Paragraph Section */
+        .main-paragraph {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        /* Highlighted Phrase */
+        .highlighted {
+            background-color: #ffd700;
+            color: #333;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .image-link {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .image-link:hover {
+            transform: scale(1.05);
+        }
+
+        .image-link img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .newsletter h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .input-group {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .input-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: 3px solid rgba(255,255,255,0.5);
+        }
+
+        .subscribe-btn {
+            background-color: white;
+            color: #667eea;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Text Block */
+        .text-block {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            border-left: 5px solid #667eea;
+        }
+
+        .text-block h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .text-block p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation with Big Logo -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">SYNC VAN CITY</a>
+            <button class="nav-button" onclick="scrollToSection()">Browse</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Vancouver Experiences</h1>
+            <h2>Your Gateway to Local Culture and Fun</h2>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section with Link in Paragraph -->
+        <section class="about-section">
+            <h3>Find Events That Match Your Vibe</h3>
+            <p>
+                Welcome to Sync Van City, where we're passionate about <a href="https://www.hellobc.com/things-to-do/arts-culture/festivals-events/">connecting locals with the best cultural events and live music Vancouver has to offer</a>. Our platform is designed to bring together music lovers, culture enthusiasts, and social butterflies who want to experience everything this amazing city has to offer. From underground indie shows to major festival events, from art gallery openings to late-night dance parties, we curate the best experiences so you don't have to spend hours searching. Join thousands of Vancouverites who trust us to keep them in the loop about what's happening in their city.
+            </p>
+        </section>
+
+        <!-- Main Paragraph -->
+        <section class="main-paragraph">
+            <p>
+                Experience Vancouver like never before: vibrant live music, cultural happenings, and unforgettable parties tailored just for you. Connect with locals, join the buzz, and explore the city's best-kept secrets all in one place. SYNC VAN CITY brings your social scene alive, right at your fingertips.
+            </p>
+        </section>
+
+        <!-- Highlighted Phrase -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <div class="highlighted">Be part of the community.</div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h4>Live Music</h4>
+                <p>From underground venues to major concerts, discover the best live performances in Vancouver.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h4>Cultural Events</h4>
+                <p>Explore art exhibitions, theatre shows, festivals, and cultural celebrations happening around the city.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h4>Personalized</h4>
+                <p>Get recommendations based on your preferences and never miss events that match your vibe.</p>
+            </div>
+        </div>
+
+        <!-- Text Block: Just sayin -->
+        <section class="text-block">
+            <h3>Just sayin'</h3>
+            <p>
+                We know how overwhelming it can be to keep track of everything happening in Vancouver. That's why we created Sync Van City - to make discovering amazing experiences as easy as scrolling through your phone. No more FOMO, no more missed concerts, no more wondering what to do this weekend. We've got you covered with real-time updates, personalized recommendations, and a community of people who love this city as much as you do.
+            </p>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="image-gallery">
+            <h4>Join the Community and Never Miss Out</h4>
+            <a href="https://i0.wp.com/sipmagazine.com/wp-content/uploads/2024/11/Vancouver-BC-Night-Out.jpg?fit=1920%2C1080&ssl=1" class="image-link" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Vancouver_Montage_2020.jpg" alt="Vancouver Event Experience">
+            </a>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Monthly Events</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">250+</div>
+                <div class="stat-label">Venues</div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section with Text Input -->
+        <section class="newsletter" id="newsletter">
+            <h3>Don't miss the fun!</h3>
+            <p>Connect with Sync Van City</p>
+            <div class="input-group">
+                <label for="email">Enter your email to stay updated</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                <button class="subscribe-btn" onclick="handleSubscribe()">Join Now</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sync Van City. All rights reserved.</p>
+        <p>Connecting Vancouver to its vibrant culture, one event at a time.</p>
+    </footer>
+
+    <script>
+        function scrollToSection() {
+            document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleSubscribe() {
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value;
+            
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing! Welcome to Sync Van City!');
+                emailInput.value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+</html>
