@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Miguel Chavez Trani - Lab #9</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        .plot-link {
+            display: block;
+            margin: 20px 0;
+            padding: 15px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 18px;
+        }
+        .plot-link:hover {
+            background-color: #2980b9;
+        }
+        .plot-description {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 10px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Miguel Chavez Trani - Lab #9</h1>
+        <h2>My Best 2 Scatterplots</h2>
+        
+        <p>
+            These visualizations explore my coding study data from October 15 - November 5, 2025,
+            examining relationships between study time, problem-solving performance, confidence,
+            and frustration levels. Using Array.filter() and Array.sort(), I've created
+            two different perspectives on my learning journey.
+        </p>
+        
+        <h3>Plot 1: Study Time vs Performance - Breakthrough Sessions</h3>
+        <div class="plot-description">
+            <strong>What it shows:</strong> Filtered view of only my most successful study sessions
+            (where I solved 5+ problems), exploring how study time relates to performance when
+            confidence is high and frustration is managed.
+            <br><br>
+            <strong>Technical approach:</strong> Uses Array.filter() to isolate breakthrough moments,
+            removing non-study days and low-performance sessions.
+        </div>
+        <a href="./plot1" class="plot-link">→ View Plot 1: Breakthrough Sessions Analysis</a>
+        
+        <h3>Plot 2: My Coding Learning Journey Over Time</h3>
+        <div class="plot-description">
+            <strong>What it shows:</strong> Chronological progression of my problem-solving ability
+            from October 15 to November 5, revealing how my performance improved over time as
+            frustration decreased and confidence increased.
+            <br><br>
+            <strong>Technical approach:</strong> Uses Array.sort() to order data chronologically,
+            creating a visual narrative of learning progress.
+        </div>
+        <a href="./plot2" class="plot-link">→ View Plot 2: Chronological Learning Progress</a>
+    </div>
+</body>
+</html>

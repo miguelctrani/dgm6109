@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Plot 1 - Breakthrough Sessions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .hypothesis {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+        .explanation h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        #chart {
+            margin: 20px 0;
+        }
+        .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .key-item {
+            font-size: 13px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #95a5a6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plot 1: Study Time vs Performance - My Breakthrough Sessions</h1>
+        
+        <div class="hypothesis">
+            <strong>Hypothesis:</strong> As study time increases, problems solved increases 
+            (filtered to show only successful sessions where I solved 5+ problems and actually studied).
+        </div>
+        
+        <div id="chart"></div>
+        
+        <div class="explanation">
+            <h3>Why This is One of My Best Scatterplots</h3>
+            <p>
+                This visualization represents one of my best scatterplots because it uses 
+                <strong>Array.filter()</strong> strategically to isolate only my most successful 
+                study sessions. By filtering for sessions where <code>studyTime > 0</code> AND 
+                <code>problemsSolved >= 5</code>, I eliminated two types of noise: days I didn't 
+                study at all, and days where I was just learning concepts without solving problems.
+            </p>
+            <p>
+                The filter revealed a powerful pattern: all 7 of my breakthrough sessions (solving 
+                5+ problems) occurred between October 20 and November 5, 2025. What's remarkable is 
+                that these successful sessions show a clear correlation between high confidence 
+                (larger circles) and low frustration (green colors). The filter helped me discover 
+                that my best work happened when I was calm and confident, not when I was grinding 
+                through frustration.
+            </p>
+            <p>
+                The most interesting insight: study time alone doesn't predict success. I had sessions 
+                with 120 minutes (Oct 18) that only produced 4 problems solved, while sessions with 
+                30-50 minutes in November produced 8 problems solved. The key difference? My mental 
+                state, shown through the confidence and frustration indicators.
+            </p>
+            <p>
+                This filtered view was genuinely useful—not just a requirement. It transformed my 
+                raw data into actionable insight: <em>quality study sessions with the right mindset 
+                matter more than simply logging hours.</em>
+            </p>
+        </div>
+        
+        <a href="../" class="back-link">← Back to Lab #9 Index</a>
+    </div>
+    
+    <script src="d3.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Plot 2 - Learning Journey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .hypothesis {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+        .explanation h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        #chart {
+            margin: 20px 0;
+        }
+        .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .key-item {
+            font-size: 13px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #95a5a6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plot 2: My Coding Learning Journey Over Time</h1>
+        
+        <div class="hypothesis">
+            <strong>Question:</strong> How did my problem-solving ability and confidence improve 
+            chronologically from mid-October through early November 2025?
+        </div>
+        
+        <div id="chart"></div>
+        
+        <div class="explanation">
+            <h3>Why This is One of My Best Scatterplots</h3>
+            <p>
+                This visualization is one of my best because it uses <strong>Array.sort()</strong> 
+                to transform my scattered study sessions into a clear chronological narrative. By 
+                sorting the data by date from oldest (Oct 15) to newest (Nov 5), the visualization 
+                tells the complete story of my three-week coding journey—something that would be 
+                impossible to see in unsorted data.
+            </p>
+            <p>
+                The sort reveals a dramatic progression: I started on October 15-22 with high 
+                frustration (red circles) and low output (2-3 problems solved), struggled through 
+                a transition period in late October as I learned new concepts, then experienced a 
+                major breakthrough in early November. By November 3-5, I was consistently solving 
+                8 problems per session with minimal frustration (green circles) and high confidence 
+                (large circles).
+            </p>
+            <p>
+                The dashed line connecting the points makes the trend unmistakable: my problem-solving 
+                ability improved steadily over time. But the most valuable insight comes from watching 
+                the circles change from red to green (decreasing frustration) while simultaneously 
+                growing larger (increasing confidence). This shows that my improvement wasn't just 
+                about memorizing syntax—I was genuinely becoming more comfortable with coding.
+            </p>
+            <p>
+                The chronological ordering was essential for answering my research question: 
+                <em>"How did I improve over time?"</em> Without the sort, these would just be scattered 
+                data points. With the sort, they become a clear narrative of learning, struggle, 
+                breakthrough, and mastery. The sort() method wasn't just a requirement—it was the 
+                key to transforming data into a meaningful story.
+            </p>
+        </div>
+        
+        <a href="../" class="back-link">← Back to Lab #9 Index</a>
+    </div>
+    
+    <script src="d3.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
