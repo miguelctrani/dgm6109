@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Miguel Chavez Drawing Final</title>
+    <script src="d3.min.js"></script>
+</head>
+<body>
+    <h1>Drawing #11: Interactive Frog</h1>
+    
+    <p><strong>These coordinates position the center of the frog's body:</strong></p>
+    
+    <p>
+        <label for="xInput">frogX:</label>
+        <input type="number" id="xInput" value="0">
+        
+        <label for="yInput">frogY:</label>
+        <input type="number" id="yInput" value="0">
+    </p>
+    
+    <p>
+        <label for="mouthState">Mouth:</label>
+        <select id="mouthState">
+            <option value="closed">Mouth Closed</option>
+            <option value="open">Mouth Open with Tongue</option>
+        </select>
+    </p>
+    
+    <p>
+        <button onclick="drawImage()">Draw!</button>
+    </p>
+    
+    <svg id="canvas" width="500" height="500" style="border: 2px solid red;"></svg>
+    
+    <script src="main.js"></script>
+</body>
+</html>
