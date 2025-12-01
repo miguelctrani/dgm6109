@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2-6 FINAL - Pet Naming System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #reset {
+            background-color: #95a5a6;
+        }
+        #reset:hover {
+            background-color: #7f8c8d;
+        }
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            min-height: 50px;
+        }
+        #output p {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #bdc3c7;
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>🐾 Pet Naming System</h1>
+        
+        <div class="form-group">
+            <label for="species">What species of pet are you naming?</label>
+            <input id="species" type="text" placeholder="Enter any species (e.g., dog, cat, pig)" />
+            <p class="note">Note: You can type any species, but only cat, dog, and pig are accepted</p>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">What is your pet's gender?</label>
+            <select id="gender">
+                <option value="">-- Select Gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="petName">Which name do you want to choose for this pet?</label>
+            <select id="petName">
+                <option value="">-- Select Name --</option>
+                <option value="Whiskers">Whiskers</option>
+                <option value="Spot">Spot</option>
+                <option value="Porky">Porky</option>
+                <option value="Daisy">Daisy</option>
+                <option value="King">King</option>
+                <option value="Princess">Princess</option>
+            </select>
+        </div>
+
+        <button id="submit">Submit Form</button>
+        <button id="reset" hidden>Start Over</button>
+
+        <div id="output"></div>
+
+        <hr />
+        <a href="./LAB4.pdf" target="_blank">📄 View my flowchart</a>
+    </div>
+
+    <script src="output.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
