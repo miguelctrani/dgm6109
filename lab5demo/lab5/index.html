@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 5: Collaborative Drawing Project</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <h1>Lab 5: Collaborative Drawing Project</h1>
+    
+    <form>
+        <label>First drawing element:
+            <select id="firstElement">
+                <option value="dog">Dog</option>
+                <option value="frog">Frog</option>
+                <option value="trumpeter">Trumpeter</option>
+            </select>
+        </label>
+        <br><br>
+        
+        <label>First element X: <input type="number" id="firstX" value="150"></label>
+        <label>First element Y: <input type="number" id="firstY" value="150"></label>
+        <br><br>
+        
+        <label>Second drawing element:
+            <select id="secondElement">
+                <option value="dog">Dog</option>
+                <option value="frog">Frog</option>
+                <option value="trumpeter">Trumpeter</option>
+            </select>
+        </label>
+        <br><br>
+        
+        <label>Second element X: <input type="number" id="secondX" value="300"></label>
+        <label>Second element Y: <input type="number" id="secondY" value="150"></label>
+        <br><br>
+        
+        <label>Show origin points:
+            <select id="showOrigin">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </label>
+        <br><br>
+        
+        <button type="button" onclick="makeDrawing()">Draw!</button>
+    </form>
+    
+    <svg id="canvas" width="800" height="600" style="border: 2px solid black; background-color: lightgray;"></svg>
+    
+    <!-- Load helper functions first -->
+    <script src="elements/helper.js"></script>
+    
+    <!-- Load drawing functions -->
+    <script src="elements/dog.js"></script>
+    <script src="elements/frog.js"></script>
+    <script src="elements/trumpeter.js"></script>
+    
+    <!-- Load main script last -->
+    <script src="main.js"></script>
+</body>
+</html>
