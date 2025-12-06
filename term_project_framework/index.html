@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Practice vs Frustration</title>
+    <script src="d3.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .hypothesis {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+        .explanation h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .explanation p {
+            margin-bottom: 15px;
+        }
+        #canvas {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Practice vs Frustration</h1>
+        
+        <div class="hypothesis">
+            <strong>Question:</strong> Does more practice reduce frustration, or does frustration decrease simply with time?
+        </div>
+        
+        <div id="canvas"></div>
+        
+        <div class="explanation">
+            <h3>Understanding the Visualization</h3>
+            
+            <p>
+                This visualization challenges the common assumption that "time heals all wounds" by examining 
+                whether frustration decreases due to the passage of time or due to actual practice. The X-axis 
+                shows the number of problems solved per session (a measure of active practice), while the Y-axis 
+                displays my self-reported frustration level on a scale of 0-5. The data is sorted chronologically 
+                using Array.sort() so that the connecting line shows my journey through time, allowing us to see 
+                whether time or practice drives the emotional change.
+            </p>
+            
+            <p>
+                <strong>Additional Visual Encodings:</strong> Circle size represents confidence level (0-5 scale), 
+                while circle color uses a red-to-green gradient that reinforces the frustration measurement. The 
+                chronological connecting line is crucial—it shows that early sessions (represented by points on 
+                the left with high frustration) occurred first, while later sessions (points on the right with 
+                low frustration) occurred after I had accumulated more practice solving problems.
+            </p>
+            
+            <h3>Key Observations from the Data</h3>
+            
+            <p>
+                <strong>Observation 1 - Time Alone Doesn't Reduce Frustration:</strong> The most striking pattern 
+                appears in the left portion of the chart where several data points show frustration at level 3-5 
+                even though multiple days had passed since I started learning. Sessions on October 17, 20, and 22 
+                all show frustration at level 4-5, despite being spread across an entire week. These points cluster 
+                at 2-5 problems solved, indicating that low practice output maintained high frustration regardless 
+                of how many days elapsed. If time were the key factor, we would expect frustration to decrease 
+                steadily across these dates—but it doesn't.
+            </p>
+            
+            <p>
+                <strong>Observation 2 - The Practice Threshold Effect:</strong> A clear pattern emerges when 
+                examining the relationship between problems solved and frustration. All sessions where I solved 
+                0-5 problems show frustration ranging from 1-5 (highly variable), but every single session where 
+                I solved 8 problems shows frustration at exactly level 1 (consistently low). This suggests a 
+                threshold effect: once practice reaches a certain level of productivity (8 problems per session), 
+                frustration becomes minimal and stable. The sessions with 0 problems solved (October 24 and 30) 
+                show moderate frustration (level 2-3) despite occurring late in my learning timeline, further 
+                proving that time alone doesn't guarantee reduced frustration—actual problem-solving practice does.
+            </p>
+            
+           
+            <h3>Conclusions</h3>
+            
+            <p>
+                The visualization definitively answers the research question: practice, not time, is the key to 
+                reducing frustration in learning to code. Multiple pieces of evidence support this conclusion. 
+                First, frustration remained high (level 4-5) across multiple sessions in the first week despite 
+                time passing, because practice output remained low (2-5 problems). Second, frustration dropped 
+                to its lowest point (level 1) only when practice reached its highest level (8 problems solved), 
+                creating a clear correlation between practice quantity and emotional state. Third, the two 
+                concept-learning sessions (0 problems solved) occurring late in the timeline still showed moderate 
+                frustration, proving that the mere passage of time doesn't guarantee reduced frustration.
+            </p>
+            
+           
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

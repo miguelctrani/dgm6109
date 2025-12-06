@@ -1,0 +1,13 @@
+.axisLabel {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.axis { /* used by d3.js when creating an axis */
+    font-size: 16pt;
+}
+
+.legend {
+    font-size: 12px;
+}

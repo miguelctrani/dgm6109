@@ -1,0 +1,514 @@
+[{
+        "city": "New York",
+        "month": "Jan",
+        "temps": [26, 39]
+    },
+    {
+        "city": "New York",
+        "month": "Feb",
+        "temps": [29, 42]
+    },
+    {
+        "city": "New York",
+        "month": "Mar",
+        "temps": [35, 50]
+    },
+    {
+        "city": "New York",
+        "month": "Apr",
+        "temps": [44, 60]
+    },
+    {
+        "city": "New York",
+        "month": "May",
+        "temps": [55, 71]
+    },
+    {
+        "city": "New York",
+        "month": "Jun",
+        "temps": [64, 79]
+    },
+    {
+        "city": "New York",
+        "month": "Jul",
+        "temps": [70, 85]
+    },
+    {
+        "city": "New York",
+        "month": "Aug",
+        "temps": [69, 83]
+    },
+    {
+        "city": "New York",
+        "month": "Sep",
+        "temps": [61, 76]
+    },
+    {
+        "city": "New York",
+        "month": "Oct",
+        "temps": [50, 65]
+    },
+    {
+        "city": "New York",
+        "month": "Nov",
+        "temps": [41, 54]
+    },
+    {
+        "city": "New York",
+        "month": "Dec",
+        "temps": [32, 44]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Jan",
+        "temps": [51, 67]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Feb",
+        "temps": [51, 67]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Mar",
+        "temps": [51, 67]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Apr",
+        "temps": [53, 69]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "May",
+        "temps": [56, 70]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Jun",
+        "temps": [58, 73]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Jul",
+        "temps": [62, 77]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Aug",
+        "temps": [62, 79]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Sep",
+        "temps": [62, 78]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Oct",
+        "temps": [59, 75]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Nov",
+        "temps": [55, 71]
+    },
+    {
+        "city": "Los Angeles",
+        "month": "Dec",
+        "temps": [51, 67]
+    },
+    {
+        "city": "Chicago",
+        "month": "Jan",
+        "temps": [18, 32]
+    }, {
+        "city": "Chicago",
+        "month": "Feb",
+        "temps": [21, 36]
+    }, {
+        "city": "Chicago",
+        "month": "Mar",
+        "temps": [30, 46]
+    }, {
+        "city": "Chicago",
+        "month": "Apr",
+        "temps": [41, 59]
+    },
+    {
+        "city": "Chicago",
+        "month": "May",
+        "temps": [52, 70]
+    },
+    {
+        "city": "Chicago",
+        "month": "Jun",
+        "temps": [63, 81]
+    },
+    {
+        "city": "Chicago",
+        "month": "Jul",
+        "temps": [68, 84]
+    },
+    {
+        "city": "Chicago",
+        "month": "Aug",
+        "temps": [66, 82]
+    },
+    {
+        "city": "Chicago",
+        "month": "Sep",
+        "temps": [57, 75]
+    },
+    {
+        "city": "Chicago",
+        "month": "Oct",
+        "temps": [46, 63]
+    },
+    {
+        "city": "Chicago",
+        "month": "Nov",
+        "temps": [34, 48]
+    },
+    {
+        "city": "Chicago",
+        "month": "Dec",
+        "temps": [23, 36]
+    }, {
+        "city": "Houston",
+        "month": "Jan",
+        "temps": [44, 62]
+    }, {
+        "city": "Houston",
+        "month": "Feb",
+        "temps": [46, 65]
+    }, {
+        "city": "Houston",
+        "month": "Mar",
+        "temps": [54, 72]
+    }, {
+        "city": "Houston",
+        "month": "Apr",
+        "temps": [60, 78]
+    }, {
+        "city": "Houston",
+        "month": "May",
+        "temps": [66, 84]
+    }, {
+        "city": "Houston",
+        "month": "Jun",
+        "temps": [72, 90]
+    }, {
+        "city": "Houston",
+        "month": "Jul",
+        "temps": [74, 92]
+    }, {
+        "city": "Houston",
+        "month": "Aug",
+        "temps": [74, 93]
+    }, {
+        "city": "Houston",
+        "month": "Sep",
+        "temps": [70, 88]
+    }, {
+        "city": "Houston",
+        "month": "Oct",
+        "temps": [61, 81]
+    }, {
+        "city": "Houston",
+        "month": "Nov",
+        "temps": [52, 71]
+    }, {
+        "city": "Houston",
+        "month": "Dec",
+        "temps": [45, 63]
+    }, {
+        "city": "Phoenix",
+        "month": "Jan",
+        "temps": [46, 67]
+    }, {
+        "city": "Phoenix",
+        "month": "Feb",
+        "temps": [49, 71]
+    }, {
+        "city": "Phoenix",
+        "month": "Mar",
+        "temps": [53, 77]
+    }, {
+        "city": "Phoenix",
+        "month": "Apr",
+        "temps": [60, 85]
+    }, {
+        "city": "Phoenix",
+        "month": "May",
+        "temps": [69, 95]
+    }, {
+        "city": "Phoenix",
+        "month": "Jun",
+        "temps": [78, 104]
+    }, {
+        "city": "Phoenix",
+        "month": "Jul",
+        "temps": [83, 106]
+    }, {
+        "city": "Phoenix",
+        "month": "Aug",
+        "temps": [83, 104]
+    }, {
+        "city": "Phoenix",
+        "month": "Sep",
+        "temps": [77, 100]
+    }, {
+        "city": "Phoenix",
+        "month": "Oct",
+        "temps": [65, 89]
+    }, {
+        "city": "Phoenix",
+        "month": "Nov",
+        "temps": [53, 76]
+    }, {
+        "city": "Phoenix",
+        "month": "Dec",
+        "temps": [45, 66]
+    }, {
+        "city": "Philadelphia",
+        "month": "Jan",
+        "temps": [26, 40]
+    }, {
+        "city": "Philadelphia",
+        "month": "Feb",
+        "temps": [28, 44]
+    }, {
+        "city": "Philadelphia",
+        "month": "Mar",
+        "temps": [34, 53]
+    }, {
+        "city": "Philadelphia",
+        "month": "Apr",
+        "temps": [44, 64]
+    }, {
+        "city": "Philadelphia",
+        "month": "May",
+        "temps": [54, 74]
+    }, {
+        "city": "Philadelphia",
+        "month": "Jun",
+        "temps": [64, 83]
+    }, {
+        "city": "Philadelphia",
+        "month": "Jul",
+        "temps": [69, 87]
+    }, {
+        "city": "Philadelphia",
+        "month": "Aug",
+        "temps": [68, 85]
+    }, {
+        "city": "Philadelphia",
+        "month": "Sep",
+        "temps": [60, 78]
+    }, {
+        "city": "Philadelphia",
+        "month": "Oct",
+        "temps": [48, 67]
+    }, {
+        "city": "Philadelphia",
+        "month": "Nov",
+        "temps": [39, 56]
+    }, {
+        "city": "Philadelphia",
+        "month": "Dec",
+        "temps": [30, 45]
+    }, {
+        "city": "San Antonio",
+        "month": "Jan",
+        "temps": [39, 62]
+    }, {
+        "city": "San Antonio",
+        "month": "Feb",
+        "temps": [42, 67]
+    }, {
+        "city": "San Antonio",
+        "month": "Mar",
+        "temps": [50, 74]
+    }, {
+        "city": "San Antonio",
+        "month": "Apr",
+        "temps": [57, 80]
+    }, {
+        "city": "San Antonio",
+        "month": "May",
+        "temps": [65, 86]
+    }, {
+        "city": "San Antonio",
+        "month": "Jun",
+        "temps": [72, 91]
+    }, {
+        "city": "San Antonio",
+        "month": "Jul",
+        "temps": [74, 95]
+    }, {
+        "city": "San Antonio",
+        "month": "Aug",
+        "temps": [74, 95]
+    }, {
+        "city": "San Antonio",
+        "month": "Sep",
+        "temps": [69, 90]
+    }, {
+        "city": "San Antonio",
+        "month": "Oct",
+        "temps": [59, 82]
+    }, {
+        "city": "San Antonio",
+        "month": "Nov",
+        "temps": [49, 71]
+    }, {
+        "city": "San Antonio",
+        "month": "Dec",
+        "temps": [41, 64]
+    }, {
+        "city": "San Diego",
+        "month": "Jan",
+        "temps": [49, 65]
+    }, {
+        "city": "San Diego",
+        "month": "Feb",
+        "temps": [51, 65]
+    }, {
+        "city": "San Diego",
+        "month": "Mar",
+        "temps": [53, 66]
+    }, {
+        "city": "San Diego",
+        "month": "Apr",
+        "temps": [56, 67]
+    }, {
+        "city": "San Diego",
+        "month": "May",
+        "temps": [59, 69]
+    }, {
+        "city": "San Diego",
+        "month": "Jun",
+        "temps": [62, 71]
+    }, {
+        "city": "San Diego",
+        "month": "Jul",
+        "temps": [65, 75]
+    }, {
+        "city": "San Diego",
+        "month": "Aug",
+        "temps": [67, 76]
+    }, {
+        "city": "San Diego",
+        "month": "Sep",
+        "temps": [65, 76]
+    }, {
+        "city": "San Diego",
+        "month": "Oct",
+        "temps": [61, 73]
+    }, {
+        "city": "San Diego",
+        "month": "Nov",
+        "temps": [54, 69]
+    }, {
+        "city": "San Diego",
+        "month": "Dec",
+        "temps": [48, 65]
+    }, {
+        "city": "Dallas",
+        "month": "Jan",
+        "temps": [30, 57]
+    }, {
+        "city": "Dallas",
+        "month": "Feb",
+        "temps": [35, 61]
+    }, {
+        "city": "Dallas",
+        "month": "Mar",
+        "temps": [42, 69]
+    }, {
+        "city": "Dallas",
+        "month": "Apr",
+        "temps": [51, 77]
+    }, {
+        "city": "Dallas",
+        "month": "May",
+        "temps": [60, 84]
+    }, {
+        "city": "Dallas",
+        "month": "Jun",
+        "temps": [67, 91]
+    }, {
+        "city": "Dallas",
+        "month": "Jul",
+        "temps": [71, 95]
+    }, {
+        "city": "Dallas",
+        "month": "Aug",
+        "temps": [71, 96]
+    }, {
+        "city": "Dallas",
+        "month": "Sep",
+        "temps": [64, 89]
+    }, {
+        "city": "Dallas",
+        "month": "Oct",
+        "temps": [52, 80]
+    }, {
+        "city": "Dallas",
+        "month": "Nov",
+        "temps": [43, 68]
+    }, {
+        "city": "Dallas",
+        "month": "Dec",
+        "temps": [32, 58]
+    }, {
+        "city": "San Jose",
+        "month": "Jan",
+        "temps": [42, 60]
+    }, {
+        "city": "San Jose",
+        "month": "Feb",
+        "temps": [45, 64]
+    }, {
+        "city": "San Jose",
+        "month": "Mar",
+        "temps": [47, 67]
+    }, {
+        "city": "San Jose",
+        "month": "Apr",
+        "temps": [49, 70]
+    }, {
+        "city": "San Jose",
+        "month": "May",
+        "temps": [53, 75]
+    }, {
+        "city": "San Jose",
+        "month": "Jun",
+        "temps": [56, 81]
+    }, {
+        "city": "San Jose",
+        "month": "Jul",
+        "temps": [58, 84]
+    }, {
+        "city": "San Jose",
+        "month": "Aug",
+        "temps": [58, 84]
+    }, {
+        "city": "San Jose",
+        "month": "Sep",
+        "temps": [57, 82]
+    }, {
+        "city": "San Jose",
+        "month": "Oct",
+        "temps": [53, 76]
+    }, {
+        "city": "San Jose",
+        "month": "Nov",
+        "temps": [46, 67]
+    }, {
+        "city": "San Jose",
+        "month": "Dec",
+        "temps": [42, 61]
+    }
+]
