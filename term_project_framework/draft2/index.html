@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Practice vs Frustration - My Coding Journey</title>
+    <script src="d3.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .hypothesis {
+            font-size: 18px;
+            color: #34495e;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+        }
+        .explanation {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+        .explanation h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .explanation p {
+            margin-bottom: 15px;
+        }
+        #canvas {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Practice vs Frustration - My Coding Journey</h1>
+        
+        <div class="hypothesis">
+            <strong>My Question:</strong> Does more practice actually reduce frustration, or does frustration just go down over time no matter what?
+        </div>
+        
+        <div id="canvas"></div>
+        
+        <div class="explanation">
+            <h3>What I'm Looking At</h3>
+            
+            <p>
+                So here's the deal - everyone says "time heals all wounds," but I wanted to see if that's actually true for learning to code. Like, does frustration go away just because days pass, or does it only get better when you actually practice and solve problems?
+            </p>
+            
+            <p>
+                In my chart, the X-axis shows how many problems I solved each day (that's the practice part), and the Y-axis shows how frustrated I felt on a scale of 0-5. The connecting line is super important because it shows the order things happened in - it goes through my journey from day to day. So even though the dots are positioned left to right by how many problems I solved, the line connects them in the order they actually happened in real life.
+            </p>
+            
+            <p>
+                I also added two extra visual things: the size of each circle shows my confidence level (bigger = more confident), and the color goes from green (not frustrated) to red (super frustrated). This just makes the frustration pattern even more obvious.
+            </p>
+            
+            <h3>What I Actually Noticed</h3>
+            
+            <p>
+                <strong>First thing - time alone doesn't help:</strong> This was honestly surprising to me. In mid-October (around Oct 17, 20, and 22), I was still super frustrated even though a whole week had passed since I started. All these sessions show frustration at level 4-5, and they're all bunched up around 2-5 problems solved. If time was the magic fix, you'd think my frustration would've dropped just because days went by - but it didn't. I stayed frustrated because I wasn't solving enough problems to actually feel better.
+            </p>
+            
+            <p>
+                <strong>Second thing - there's like a "breakthrough point":</strong> When I look at sessions where I only solved 0-5 problems, my frustration was all over the place - sometimes level 1, sometimes level 5. But every single time I managed to solve 8 problems in one session, my frustration was at level 1 (the lowest). That happened around early November when things finally started clicking. It's like once you hit a certain level of practice, the frustration just drops and stays low. The weird part is that on days where I solved 0 problems (like Oct 24 and 30), even though they were later in my learning, I still had medium frustration (level 2-3). That proved to me it's not about how many days passed - it's about actually doing the work.
+            </p>
+            
+           
+            <h3>So What's The Answer?</h3>
+            
+            <p>
+                My visualization shows pretty clearly that practice matters way more than time. Here's why: First, I stayed super frustrated (level 4-5) through multiple days in October even though time was passing, because I was only solving 2-5 problems. Second, my frustration only dropped to level 1 when I started consistently solving 8 problems per session - that's a direct connection between practice and feeling better. And third, those two days where I did concept learning but didn't solve actual problems (0 solved) still had moderate frustration even though they happened later - proof that just waiting doesn't work.
+            </p>
+            
+            <p>
+                Honestly, this makes sense to me now. When you're just sitting there waiting for coding to "click," nothing happens. But when you actually sit down and push through problems, even when it's hard, that's when things start to feel easier and less frustrating. It's not magic - it's just putting in the reps.
+            </p>
+            
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

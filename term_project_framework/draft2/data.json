@@ -1,0 +1,352 @@
+[
+    {
+        "date": "Oct 15",
+        "schoolWork": "W",
+        "studyTime": 50,
+        "problemsSolved": 3,
+        "errorRate": 5,
+        "confidence": 0,
+        "frustration": 5,
+        "notes": "Loops practice, some bugs"
+    },
+    {
+        "date": "Oct 16",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 5,
+        "notes": ""
+    },
+    {
+        "date": "Oct 17",
+        "schoolWork": "W",
+        "studyTime": 40,
+        "problemsSolved": 2,
+        "errorRate": 7,
+        "confidence": 1,
+        "frustration": 5,
+        "notes": "Loops practice, some bugs"
+    },
+    {
+        "date": "Oct 18",
+        "schoolWork": "W",
+        "studyTime": 120,
+        "problemsSolved": 4,
+        "errorRate": 6,
+        "confidence": 1,
+        "frustration": 4,
+        "notes": "IF/ELSE statements, progress"
+    },
+    {
+        "date": "Oct 19",
+        "schoolWork": "NO",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 5,
+        "notes": ""
+    },
+    {
+        "date": "Oct 20",
+        "schoolWork": "W",
+        "studyTime": 50,
+        "problemsSolved": 5,
+        "errorRate": 7,
+        "confidence": 1,
+        "frustration": 4,
+        "notes": "IF/ELSE statements, progress"
+    },
+    {
+        "date": "Oct 21",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Oct 22",
+        "schoolWork": "W",
+        "studyTime": 40,
+        "problemsSolved": 2,
+        "errorRate": 7,
+        "confidence": 1,
+        "frustration": 5,
+        "notes": "Loops practice, some bugs"
+    },
+    {
+        "date": "Oct 23",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 5,
+        "notes": "Had issues w/ syntax"
+    },
+    {
+        "date": "Oct 24",
+        "schoolWork": "W",
+        "studyTime": 30,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 3,
+        "frustration": 3,
+        "notes": "Primitive Data Types CONCEPT learning"
+    },
+    {
+        "date": "Oct 25",
+        "schoolWork": "NO",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Oct 26",
+        "schoolWork": "NO",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Oct 27",
+        "schoolWork": "W",
+        "studyTime": 40,
+        "problemsSolved": 3,
+        "errorRate": 2,
+        "confidence": 4,
+        "frustration": 3,
+        "notes": "console.log() lerning"
+    },
+    {
+        "date": "Oct 28",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Oct 29",
+        "schoolWork": "W",
+        "studyTime": 40,
+        "problemsSolved": 2,
+        "errorRate": 3,
+        "confidence": 4,
+        "frustration": 2,
+        "notes": "console.log() practice"
+    },
+    {
+        "date": "Oct 30",
+        "schoolWork": "W/S",
+        "studyTime": 40,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 4,
+        "frustration": 2,
+        "notes": "Concept learning (strings,)"
+    },
+    {
+        "date": "Oct 31",
+        "schoolWork": "W",
+        "studyTime": 30,
+        "problemsSolved": 2,
+        "errorRate": 3,
+        "confidence": 4,
+        "frustration": 1,
+        "notes": "Data types"
+    },
+    {
+        "date": "Nov 1",
+        "schoolWork": "W",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 2",
+        "schoolWork": "NO",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 3",
+        "schoolWork": "W",
+        "studyTime": 50,
+        "problemsSolved": 8,
+        "errorRate": 2,
+        "confidence": 4,
+        "frustration": 1,
+        "notes": "Variables Let"
+    },
+    {
+        "date": "Nov 4",
+        "schoolWork": "W/S",
+        "studyTime": 30,
+        "problemsSolved": 8,
+        "errorRate": 3,
+        "confidence": 4,
+        "frustration": 1,
+        "notes": "Variables cons, var practice"
+    },
+    {
+        "date": "Nov 5",
+        "schoolWork": "W",
+        "studyTime": 50,
+        "problemsSolved": 8,
+        "errorRate": 4,
+        "confidence": 4,
+        "frustration": 1,
+        "notes": "String interpolation practice"
+    },
+    {
+        "date": "Nov 6",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 7",
+        "schoolWork": "W",
+        "studyTime": 40,
+        "problemsSolved": 3,
+        "errorRate": 0,
+        "confidence": 5,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 8",
+        "schoolWork": "NO",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 9",
+        "schoolWork": "NO",
+        "studyTime": 60,
+        "problemsSolved": 10,
+        "errorRate": 3,
+        "confidence": 5,
+        "frustration": 0,
+        "notes": "sorting Arrays"
+    },
+    {
+        "date": "Nov 10",
+        "schoolWork": "W",
+        "studyTime": 60,
+        "problemsSolved": 4,
+        "errorRate": 0,
+        "confidence": 5,
+        "frustration": 1,
+        "notes": ".map() .filter()"
+    },
+    {
+        "date": "Nov 11",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 12",
+        "schoolWork": "W",
+        "studyTime": 30,
+        "problemsSolved": 3,
+        "errorRate": 2,
+        "confidence": 4,
+        "frustration": 1,
+        "notes": "sorting Arrays"
+    },
+    {
+        "date": "Nov 13",
+        "schoolWork": "W/S",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 14",
+        "schoolWork": "W",
+        "studyTime": 40,
+        "problemsSolved": 4,
+        "errorRate": 3,
+        "confidence": 4,
+        "frustration": 0,
+        "notes": "arrays"
+    },
+    {
+        "date": "Nov 15",
+        "schoolWork": "NO",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": ""
+    },
+    {
+        "date": "Nov 16",
+        "schoolWork": "NO",
+        "studyTime": 60,
+        "problemsSolved": 5,
+        "errorRate": 6,
+        "confidence": 5,
+        "frustration": 0,
+        "notes": "D3 append(), homework"
+    },
+    {
+        "date": "Nov 17",
+        "schoolWork": "W",
+        "studyTime": 0,
+        "problemsSolved": 0,
+        "errorRate": 0,
+        "confidence": 0,
+        "frustration": 0,
+        "notes": "Arrow functions"
+    },
+    {
+        "date": "Nov 18",
+        "schoolWork": "W/S",
+        "studyTime": 70,
+        "problemsSolved": 8,
+        "errorRate": 8,
+        "confidence": 5,
+        "frustration": 0,
+        "notes": "Lab 9"
+    }
+]
