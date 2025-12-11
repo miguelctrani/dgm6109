@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNC Vancouver - Discover Vancouver's Best Cultural Events</title>
+    <meta name="description" content="Connect locals with the best cultural events and live music Vancouver has to offer. Don't miss the fun!">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Mobile Menu Checkbox (hidden) -->
+    <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox">
+    
+    <!-- Header with Navigation -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="#home" class="nav-link logo-link">
+                <img src="images/logo2.png" alt="SYNC Vancouver Logo" class="nav-logo">
+            </a>
+            <a href="#events" class="nav-link">EVENTS</a>
+            <a href="#experiences" class="nav-link">EXPERIENCES</a>
+            <a href="#trending" class="nav-link">TRENDING</a>
+            <a href="#food" class="nav-link">FOOD</a>
+            <a href="#blog" class="nav-link">BLOG</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <label for="mobile-menu-toggle" class="mobile-menu-btn">
+            <span class="menu-icon"></span>
+        </label>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="#home" class="mobile-nav-link">HOME</a>
+        <a href="#events" class="mobile-nav-link">EVENTS</a>
+        <a href="#experiences" class="mobile-nav-link">EXPERIENCES</a>
+        <a href="#trending" class="mobile-nav-link">TRENDING</a>
+        <a href="#food" class="mobile-nav-link">FOOD</a>
+        <a href="#blog" class="mobile-nav-link">BLOG</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="images/vancouverview.jpeg" alt="Vancouver Skyline" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <img src="images/logo.png" alt="SYNC Logo" class="hero-logo">
+            <h1 class="hero-title">
+                <span class="title-line">SYNC</span>
+                <span class="title-line">VANCITY</span>
+            </h1>
+            <p class="hero-subtitle">Connect locals with the best cultural events and live music Vancouver has to offer. <a href="#events" class="hero-link">Don't miss the fun!</a></p>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider">
+        <img src="images/lines-top.png" alt="" class="divider-image">
+    </div>
+
+    <!-- Events Today Section -->
+    <section id="events" class="events-today">
+        <div class="container">
+            <h2 class="section-title">Events Today</h2>
+            
+            <div class="events-grid">
+                <!-- Event 1: Harry Potter -->
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="images/events today/harrypotterimge.jpg" alt="Harry Potter Forbidden Forest Experience" loading="lazy">
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Harry Potter Forbidden Forest Experience</h3>
+                        <p class="event-date">December 9</p>
+                    </div>
+                </article>
+
+                <!-- Event 2: Ballet Lights -->
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="images/events today/balletlightsimge.png" alt="Ballet Lights" loading="lazy">
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Ballet Lights</h3>
+                        <p class="event-date">December 11</p>
+                    </div>
+                </article>
+
+                <!-- Event 3: Candlelight -->
+                <article class="event-card">
+                    <div class="event-image">
+                        <img src="images/events today/candlelightimge.jpg" alt="Candlelight Concert" loading="lazy">
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Candlelight</h3>
+                        <p class="event-date">December 12</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse in Vancouver Section -->
+    <section class="browse-vancouver">
+        <div class="container">
+            <h2 class="section-title">Browse in Vancouver</h2>
+            
+            <!-- Google Maps Embed -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83326.74930219458!2d-123.19934095!3d49.2608724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb3%3A0xbb9196ea9b81f38b!2sVancouver%2C%20BC%2C%20Canada!5e0!3m2!1sen!2sus!4v1702157000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Vancouver Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities to Inspire You Section -->
+    <section class="activities-inspire">
+        <div class="container">
+            <h2 class="section-title">Activities to Inspire You</h2>
+            
+            <div class="activities-grid">
+                <!-- Stanley's Bar -->
+                <article class="activity-card">
+                    <a href="https://stanleyparkpavilion.com/stanleys-bar-and-grill/" target="_blank" rel="noopener noreferrer" class="activity-link">
+                        <div class="activity-image">
+                            <img src="images/activities to inspire you/stanleys.jpg" alt="Stanley's Bar and Grill" loading="lazy">
+                        </div>
+                        <div class="activity-content">
+                            <h3 class="activity-title">Stanley's Bar</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Vancouver Christmas Market -->
+                <article class="activity-card">
+                    <a href="https://www.vancouverchristmasmarket.com/" target="_blank" rel="noopener noreferrer" class="activity-link">
+                        <div class="activity-image">
+                            <img src="images/activities to inspire you/vancouverchristmasmarket.jpg" alt="Vancouver Christmas Market" loading="lazy">
+                        </div>
+                        <div class="activity-content">
+                            <h3 class="activity-title">Vancouver Christmas Market</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trip Section -->
+    <section class="trip-section">
+        <div class="container">
+            <h2 class="section-title">Trip</h2>
+            
+            <div class="trip-grid">
+                <!-- Trip 1: Vancouver to Victoria -->
+                <article class="trip-card">
+                    <input type="checkbox" id="trip1-toggle" class="trip-checkbox">
+                    
+                    <div class="trip-image">
+                        <img src="images/trip/Vancouvertovictoria.png" alt="Vancouver to Victoria Ferry" loading="lazy">
+                    </div>
+                    
+                    <label for="trip1-toggle" class="trip-toggle-btn">
+                        <span class="btn-text-show">View Details</span>
+                        <span class="btn-text-hide">Hide Details</span>
+                    </label>
+                    
+                    <div class="trip-details">
+                        <h3 class="trip-title">Vancouver to Victoria One-Way Ferry Tickets</h3>
+                        
+                        <div class="trip-section-content">
+                            <h4>Ticket Types</h4>
+                            <ul>
+                                <li>🎫 Vancouver to Victoria One-Way Ticket for 1 Adult (12+)</li>
+                                <li>🎫 Vancouver to Victoria One-Way Ticket for 1 Child (5-11)</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>All tickets include:</h4>
+                            <ul>
+                                <li>Scheduled motor coach transportation from the Bus Terminal at Pacific Central Station, in Vancouver, to the Tsawwassen Ferry Terminal</li>
+                                <li>One-way ferry trip from the Tsawwassen Ferry Terminal to the Swartz Bay Ferry Terminal, in Victoria</li>
+                                <li>Scheduled motor coach transportation from the Swartz Bay Ferry Terminal to the bus terminal at the Capital City Station, in Victoria</li>
+                            </ul>
+                            <p><em>Children ages 4 and under enter free of charge</em></p>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>Highlights</h4>
+                            <ul>
+                                <li>⛴️ Take the fun, scenic route to Victoria</li>
+                                <li>🚌 Tickets include both bus and boat from Vancouver</li>
+                                <li>👍 Enjoy a fuss-free and easy journey</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>General Info</h4>
+                            <ul>
+                                <li>📅 Date and time: various dates and times available (select during purchase)</li>
+                                <li>⏳ Duration: 4 hours</li>
+                                <li>📍 Location: Pacific Central Station</li>
+                                <li>👤 Age requirement: children under 15 must be accompanied by an adult</li>
+                                <li>👉 Please note: max 3 pieces of luggage per person - 2 checked bags (max 22.5kg/50lbs) + 1 carry-on item</li>
+                                <li>❓ For this event, all sales are final and tickets can't be refunded, changed or modified</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>Description</h4>
+                            <p>Your transport between two of British Columbia's best-loved destinations is made easy with this one-way ticket from Vancouver to Victoria. Board your bus at Vancouver Bus Terminal, then hop on the ferry to Victoria's Swartz Bay. Both the bus and boat are easy, comfortable, and guaranteed to get you to your destination fuss-free, in record time!</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trip 2: Whistler -->
+                <article class="trip-card">
+                    <input type="checkbox" id="trip2-toggle" class="trip-checkbox">
+                    
+                    <div class="trip-image">
+                        <img src="images/trip/Whistler.png" alt="Whistler & Sea to Sky Gondola" loading="lazy">
+                    </div>
+                    
+                    <label for="trip2-toggle" class="trip-toggle-btn">
+                        <span class="btn-text-show">View Details</span>
+                        <span class="btn-text-hide">Hide Details</span>
+                    </label>
+                    
+                    <div class="trip-details">
+                        <h3 class="trip-title">Whistler & Sea to Sky Gondola: Day Trip from Vancouver</h3>
+                        
+                        <p class="trip-intro">⭐ Whistler & Sea to Sky Gondola: Day Trip from Vancouver offers stunning views of the Coast Mountains, including Howe Sound, Shannon Falls, and the Tantalus Glacier.</p>
+
+                        <div class="trip-section-content">
+                            <h4>Ticket Types</h4>
+                            <ul>
+                                <li>🎫 Adult (13+)</li>
+                                <li>🎫 Child (3-12)</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>Highlights</h4>
+                            <ul>
+                                <li>🌲 Venture into the expansive wilderness of the Coast Mountains with a knowledgeable guide</li>
+                                <li>🚠 Ascend 885 meters in a mere 10 minutes aboard the Sea to Sky Gondola, relishing in the breathtaking panoramas of Howe Sound, Shannon Falls, and Stawamus Chief</li>
+                                <li>🏔 Explore the quaint mountain town of Whistler, meandering through serene forest trails</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>General Info</h4>
+                            <ul>
+                                <li>📅 Date: various dates available (select during purchase)</li>
+                                <li>🕒 Time: 8:50 a.m.</li>
+                                <li>⏳ Duration: approximately 10 hours</li>
+                                <li>📍 Location: pick-up is available at downtown Vancouver hotels</li>
+                                <li>👤 Age requirement: all ages are welcome</li>
+                                <li>👗 Dress Code: tours run regardless of weather conditions. Dress accordingly.</li>
+                                <li>❓ For this event, all sales are final and tickets can't be refunded, changed or modified</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>Description</h4>
+                            <p>Prepare for an escapade in the jaw-dropping Coast Mountains of British Columbia! Embark on a guided bus tour from vibrant Vancouver and get ready to soar to unimaginable heights as you ascend the majestic Habrich Ridge aboard the Sea to Sky Gondola. With the most mesmerizing vistas! Dive headfirst into the enchanting wilderness of Whistler and lose yourself in its serene forest trails. Get your tickets now!</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trip 3: Seaplane Tour -->
+                <article class="trip-card">
+                    <input type="checkbox" id="trip3-toggle" class="trip-checkbox">
+                    
+                    <div class="trip-image">
+                        <img src="images/trip/Extendedvancouver.png" alt="Extended Vancouver Seaplane Tour" loading="lazy">
+                    </div>
+                    
+                    <label for="trip3-toggle" class="trip-toggle-btn">
+                        <span class="btn-text-show">View Details</span>
+                        <span class="btn-text-hide">Hide Details</span>
+                    </label>
+                    
+                    <div class="trip-details">
+                        <h3 class="trip-title">Extended Vancouver Seaplane Tour</h3>
+                        
+                        <p class="trip-intro">Smartphone tickets | ⚡ Instant access to your tickets | ⏳ Duration: 45m</p>
+                        
+                        <p>Get ready to elevate your adventure with our upgraded tour that's all the rage! Dive into the heart of Vancouver from the skies, where our expert pilots will whisk you away on a seasonal journey showcasing the best views. Glide over the mesmerizing Howe Sound islands and then loop back, ensuring your trip is packed with unforgettable sights.</p>
+
+                        <div class="trip-section-content">
+                            <h4>Highlights</h4>
+                            <ul>
+                                <li>✈️ Soar over the islands of Howe Sound with breathtaking views</li>
+                                <li>🌆 Explore Vancouver's stunning skyline from a unique perspective</li>
+                                <li>🐾 Service animals welcome, ensuring no furry friend is left behind</li>
+                            </ul>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>What's Included?</h4>
+                            <p>✔️ Taxes and fees</p>
+                        </div>
+
+                        <div class="trip-section-content">
+                            <h4>Additional Information</h4>
+                            <ul>
+                                <li>🐕 Service animals are welcome.</li>
+                                <li>🚊 Convenient public transportation options are available nearby.</li>
+                                <li>👶 Infants must be seated on an adult's lap.</li>
+                                <li>🏋️‍♂️ This experience is suitable for all physical fitness levels.</li>
+                                <li>⏰ Passengers should arrive at the terminal at least 40 minutes before departure and complete check-in 20 minutes before departure.</li>
+                                <li>🆔 All passengers aged 18 and over must show valid government-issued photo ID or two non-photo IDs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section id="experiences" class="experiences-section">
+        <div class="container">
+            <input type="checkbox" id="adventure-toggle" class="experience-checkbox">
+            
+            <h2 class="section-title">Experiences</h2>
+            
+            <div class="experiences-grid">
+                <label for="adventure-toggle" class="experience-card">
+                    <img src="images/experiences/adventure.png" alt="Adventure" loading="lazy">
+                    <span class="experience-label">Adventure</span>
+                </label>
+
+                <div class="experience-card">
+                    <img src="images/experiences/tours.png" alt="Tours" loading="lazy">
+                    <span class="experience-label">Tours</span>
+                </div>
+
+                <div class="experience-card">
+                    <img src="images/experiences/art.png" alt="Art" loading="lazy">
+                    <span class="experience-label">Art</span>
+                </div>
+
+                <div class="experience-card">
+                    <img src="images/experiences/wellness.png" alt="Wellness" loading="lazy">
+                    <span class="experience-label">Wellness</span>
+                </div>
+
+                <div class="experience-card">
+                    <img src="images/experiences/nature.png" alt="Nature" loading="lazy">
+                    <span class="experience-label">Nature</span>
+                </div>
+
+                <div class="experience-card">
+                    <img src="images/experiences/club&attractions.png" alt="Club & Attractions" loading="lazy">
+                    <span class="experience-label">Club & Attractions</span>
+                </div>
+            </div>
+
+            <!-- Adventure Details -->
+            <div class="experience-details">
+                <label for="adventure-toggle" class="close-details-btn">← Back to Experiences</label>
+                
+                <h3 class="experience-details-title">Adventure Experiences</h3>
+
+                <article class="adventure-item">
+                    <div class="adventure-image">
+                        <img src="images/adventure/Lighthousepark.png" alt="Lighthouse Park" loading="lazy">
+                    </div>
+                    <div class="adventure-content">
+                        <h4>Lighthouse Park</h4>
+                        <p>Just a 30-minute drive from downtown, Lighthouse Park in West Vancouver offers numerous easy hiking trails among some of the oldest Douglas firs in the region. Dogs are allowed off-leash throughout the park, making it a favorite spot for dog walking on the North Shore. Many of the trails follow the coastline and are mostly flat, though there are a few steeper sections. A 15-minute walk leads to Starboat Cove, a great picnic spot with views stretching from the Lions Gate Bridge to the University of British Columbia and Vancouver Island.</p>
+                    </div>
+                </article>
+
+                <article class="adventure-item">
+                    <div class="adventure-image">
+                        <img src="images/adventure/Stawamuschief.png" alt="Stawamus Chief" loading="lazy">
+                    </div>
+                    <div class="adventure-content">
+                        <h4>Stawamus Chief</h4>
+                        <p>Just an hour from Vancouver, Stawamus Chief offers one of the region's most classic, yet challenging, hiking trails. This 11-kilometer (6.8-mile) route covers 600 meters (1,968 feet) of elevation gain and offers sweeping views of the mountains and water. The reward for this strenuous hike is the summit, an opening in smooth rock that invites a picnic or a nap in the sun. The hiking trail that skirts the forested back of the mountain features old-growth forest and a side trail option for views of the majestic Shannon Falls.</p>
+                    </div>
+                </article>
+
+                <article class="adventure-item">
+                    <div class="adventure-image">
+                        <img src="images/adventure/Stanleypark.jpg" alt="Stanley Park" loading="lazy">
+                    </div>
+                    <div class="adventure-content">
+                        <h4>Stanley Park</h4>
+                        <p>Considered one of the world's largest urban parks, Stanley Park offers hikers of all levels a variety of outdoor trails. The paved seawall features separate walking and biking lanes, allowing for a leisurely stroll along the park's waterfront. Get a workout with a 6-kilometer (3.7-mile) loop through the temperate rainforest. The trail passes through the park gardens and Beaver Lake, ending near Third Beach.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+        <div class="container">
+            <a href="images/calendar/calendar.png" target="_blank" class="calendar-link">
+                <button class="calendar-btn">View Full Calendar</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section id="food" class="food-section">
+        <div class="container">
+            <h2 class="section-title">Food</h2>
+            
+            <div class="food-grid">
+                <article class="food-card">
+                    <a href="https://www.bodegaonmain.ca/" target="_blank" rel="noopener noreferrer" class="food-link">
+                        <div class="food-image">
+                            <img src="images/food/bodegaonmian.jpeg" alt="Bodega on Main" loading="lazy">
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Bodega on Main</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="food-card">
+                    <a href="https://persesocialcorner.com/" target="_blank" rel="noopener noreferrer" class="food-link">
+                        <div class="food-image">
+                            <img src="images/food/socialcorner.jpg" alt="Perse Social Corner" loading="lazy">
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Social Corner</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="food-card">
+                    <a href="https://www.theellis.ca/" target="_blank" rel="noopener noreferrer" class="food-link">
+                        <div class="food-image">
+                            <img src="images/food/theellis.jpg" alt="The Ellis" loading="lazy">
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">The Ellis</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="food-card">
+                    <a href="https://www.sakukatsu.com/" target="_blank" rel="noopener noreferrer" class="food-link">
+                        <div class="food-image">
+                            <img src="images/food/saku.jpeg" alt="SAKU" loading="lazy">
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Saku</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="food-card">
+                    <a href="https://www.kokororamen.ca/" target="_blank" rel="noopener noreferrer" class="food-link">
+                        <div class="food-image">
+                            <img src="images/food/kokororamen.jpeg" alt="Kokoro Ramen" loading="lazy">
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">Kokoro Ramen</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="food-card">
+                    <a href="https://33acresbrewing.com/" target="_blank" rel="noopener noreferrer" class="food-link">
+                        <div class="food-image">
+                            <img src="images/food/33acres.jpg" alt="33 Acres Brewing" loading="lazy">
+                        </div>
+                        <div class="food-content">
+                            <h3 class="food-title">33 Acres</h3>
+                            <span class="visit-badge">Visit Site</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <input type="checkbox" id="blog1-toggle" class="blog-checkbox">
+                    
+                    <div class="blog-image">
+                        <img src="images/blog/Downtown Vancouver and Cambie Village/loveVancouver.jpg" alt="#LoveVancouver Neighborhoods" loading="lazy">
+                    </div>
+                    
+                    <div class="blog-preview">
+                        <h3 class="blog-title">#LoveVancouver Neighborhoods: Downtown Vancouver and Cambie Village</h3>
+                        <p class="blog-excerpt">What makes a neighborhood unmistakably "Vancouver"? Our city encompasses blocks, streams, hillsides, and an inlet, but at every corner and on the crest of every wave, there's a constant sense that everything fits together...</p>
+                        <label for="blog1-toggle" class="read-more-btn">Read More</label>
+                    </div>
+                    
+                    <div class="blog-full-content">
+                        <label for="blog1-toggle" class="close-blog-btn">← Back</label>
+                        
+                        <h3>#LoveVancouver Neighborhoods: Downtown Vancouver and Cambie Village</h3>
+                        
+                        <p>What makes a neighborhood unmistakably "Vancouver"? Our city encompasses blocks, streams, hillsides, and an inlet, but at every corner and on the crest of every wave, there's a constant sense that everything fits together. Perhaps it's because the city is nestled between forest, mountain, and ocean. Or perhaps it's because it's a destination for those seeking a new home. But whatever it is, we know Vancouver will never lose that unforgettable feeling that something unique is hidden around every corner.</p>
+
+                        <p>With our #LoveVancouver Neighborhoods series, we want to take you on a tour and show you why this city continues to impress us with new discoveries and trusted favorites.</p>
+
+                        <div class="blog-image-inline">
+                            <img src="images/blog/Downtown Vancouver and Cambie Village/Image1.jpg" alt="Downtown Vancouver" loading="lazy">
+                        </div>
+
+                        <p>The city's largest district, this is where shopping and people-watching are some of Vancouver's finest experiences. On what other streets in the city, besides Robson, can you browse countless designer boutiques and choose from the best international cuisine? The area's diversity reflects the number of people who come here to find something special or celebrate a special occasion.</p>
+
+                        <p>This sprawling neighborhood, stretching from Coal Harbor to Denman and reaching the edge of Yaletown, is home to other impressive features. Did you know that our cruise terminal is the fourth largest in the world?</p>
+
+                       
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <input type="checkbox" id="blog2-toggle" class="blog-checkbox">
+                    
+                    <div class="blog-image">
+                        <img src="images/blog/dineout/dineout.jpg" alt="Dine Out Vancouver 2026" loading="lazy">
+                    </div>
+                    
+                    <div class="blog-preview">
+                        <h3 class="blog-title">A First Look at Dine Out Vancouver 2026</h3>
+                        <p class="blog-excerpt">Vancouver's culinary scene is a dream come true for foodies looking to expand their palates and savor flavors from around the world...</p>
+                        <label for="blog2-toggle" class="read-more-btn">Read More</label>
+                    </div>
+                    
+                    <div class="blog-full-content">
+                        <label for="blog2-toggle" class="close-blog-btn">← Back</label>
+                        
+                        <h3>A First Look at Dine Out Vancouver 2026</h3>
+
+                        <p>Vancouver's culinary scene is a dream come true for foodies looking to expand their palates and savor flavors from around the world. And there's no better way to experience it all than through the city's numerous food festivals. With the arrival of winter comes the most anticipated of these celebrations: Dine Out Vancouver.</p>
+
+                        <p>For the past 24 years, the preparations for Dine Out Vancouver have followed a similar pattern. Everyone counts down the days to the grand reveal of the restaurant lineup. It arrives, menus are reviewed, and wish lists are created.</p>
+
+                        <div class="blog-image-inline">
+                            
+                        </div>
+
+                        <h4>Restaurant Preview in Mount Pleasant</h4>
+
+                        <div class="blog-image-inline">
+                           
+                        </div>
+
+                        <p>Just a 10-minute Uber ride from downtown, you'll find yourself in Mount Pleasant, one of the city's most vibrant neighborhoods. Home to countless independent boutiques and neighborhood cafes, it's also a haven for Vancouver foodies.</p>
+
+                        <p>At the heart of this lively neighborhood is The Acorn, one of the city's most celebrated vegan restaurants. It serves some of the most creative dishes in town, crafted with fresh, locally sourced ingredients in a zero-waste kitchen.</p>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-post">
+                    <input type="checkbox" id="blog3-toggle" class="blog-checkbox">
+                    
+                    <div class="blog-image">
+                        <img src="images/blog/Your last-minute summer to-do list/summer.jpg" alt="Summer To-Do List" loading="lazy">
+                    </div>
+                    
+                    <div class="blog-preview">
+                        <h3 class="blog-title">Your Last-Minute Summer To-Do List</h3>
+                        <p class="blog-excerpt">Now that September is here, fall is just around the corner. But summer isn't over yet! You still have time to enjoy some last-minute adventures...</p>
+                        <label for="blog3-toggle" class="read-more-btn">Read More</label>
+                    </div>
+                    
+                    <div class="blog-full-content">
+                        <label for="blog3-toggle" class="close-blog-btn">← Back</label>
+                        
+                        <h3>Your Last-Minute Summer To-Do List</h3>
+
+                        <p>Now that September is here, fall is just around the corner. But summer isn't over yet! You still have time to enjoy some last-minute adventures on the beach, hiking, visiting markets, and more.</p>
+
+                        <div class="blog-image-inline">
+                            <img src="images/blog/Your last-minute summer to-do list/imagen1.jpg" alt="Grouse Mountain" loading="lazy">
+                        </div>
+
+                        <h4>Grouse Mountain</h4>
+
+                        <p>Grouse Mountain is open year-round, with skiing, skating, tobogganing, and much more in the winter. But you only have a few weeks left to enjoy its summer activities. Don't miss the world-famous Lumberjack Show.</p>
+
+                        <div class="blog-image-inline">
+                            <img src="images/blog/Your last-minute summer to-do list/imagen2.jpg" alt="Paddleboarding" loading="lazy">
+                        </div>
+
+                        <h4>Go Paddleboarding</h4>
+
+                        <p>In Vancouver, you can enjoy paddleboarding right downtown, on the beach, or along the rugged coastline. While kayaking is available year-round, most paddleboard rentals and tours wind down with the arrival of winter.</p>
+
+                        <div class="blog-image-inline">
+                            <img src="images/blog/Your last-minute summer to-do list/imagen3.jpg" alt="Vancouver Beach" loading="lazy">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section id="trending" class="trending-section">
+        <div class="container">
+            <h2 class="section-title">Trending</h2>
+            
+            <div class="trending-grid">
+                <!-- Trending 1: World Cup -->
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="images/trending/worldcup.png" alt="Vancouver 2026 World Cup" loading="lazy">
+                    </div>
+                    <div class="trending-content">
+                        <h3 class="trending-title">The Vancouver 2026 World Cup Matches Have Been Announced!</h3>
+                        <p>The 2026 FIFA World Cup schedule has been announced, with Vancouver hosting seven matches total across the tournament at BC Place Stadium in the summer of 2026. The global tournament will be jointly hosted by 16 cities in three North American nations: Canada, Mexico, and the United States.</p>
+                        <p>Every four years, the World Cup unites billions of fans from across the globe. In 2026, Vancouver gets another opportunity to showcase itself as a world-class destination.</p>
+                    </div>
+                    <div class="trending-image-secondary">
+                        <img src="images/trending/fifa.jpg" alt="FIFA World Cup" loading="lazy">
+                    </div>
+                </article>
+
+                <!-- Trending 2: HYROX -->
+                <article class="trending-card">
+                    <div class="trending-image">
+                        <img src="images/trending/1.png" alt="Why Come to Vancouver for HYROX" loading="lazy">
+                    </div>
+                    <div class="trending-content">
+                        <h3 class="trending-title">Why Come to Vancouver for HYROX</h3>
+                        
+                        <h4>What is HYROX?</h4>
+                        <p>Known as the "world series of fitness racing," HYROX is an indoor fitness competition that has exploded in popularity worldwide since its inception in 2017. What makes it unique is its standardized race format with eight 1 km running laps alternating with 8 different functional workout stations.</p>
+                    </div>
+                    <div class="trending-image-secondary">
+                        <img src="images/trending/2.jpg" alt="HYROX Vancouver" loading="lazy">
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome to Vancity Section -->
+    <section class="welcome-vancity">
+        <div class="welcome-image">
+            <img src="images/what-is-vancouver-known-for.jpg" alt="What is Vancouver Known For" loading="lazy">
+        </div>
+        <div class="welcome-text">
+            <h2>Welcome to Vancity</h2>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SYNC Vancouver</h3>
+                    <p>Connect locals with the best cultural events and live music Vancouver has to offer.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav class="footer-nav">
+                        <a href="#home">Home</a>
+                        <a href="#events">Events</a>
+                        <a href="#experiences">Experiences</a>
+                        <a href="#trending">Trending</a>
+                        <a href="#food">Food</a>
+                        <a href="#blog">Blog</a>
+                    </nav>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20494e464f6053594e4356414e434f555645520e434f4d">[email&#160;protected]</a></p>
+                    <p>Phone: (604) 555-SYNC</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">

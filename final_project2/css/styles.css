@@ -1,0 +1,1207 @@
+/* ========================================
+   CSS VARIABLES - Copper Aquamarine Dream
+   ======================================== */
+:root {
+    --color-tan: #DCAA89;
+    --color-dark-teal: #30525C;
+    --color-rust-orange: #C35627;
+    --color-light-rust: #D6794D;
+    --color-medium-teal: #4C848D;
+    --color-light-gray: #BFB9B5;
+    --color-white: #FFFFFF;
+    --color-black: #1A1A1A;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   RESET AND BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: all var(--transition-speed);
+}
+
+/* ========================================
+   HIDE ALL CHECKBOX INPUTS
+   ======================================== */
+.mobile-menu-checkbox,
+.trip-checkbox,
+.experience-checkbox,
+.blog-checkbox {
+    display: none;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   HEADER AND NAVIGATION
+   ======================================== */
+.main-header {
+    background-color: var(--color-dark-teal);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    transition: transform var(--transition-speed);
+}
+
+.logo-link:hover .nav-logo {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--color-rust-orange);
+    transition: width var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--color-tan);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon {
+    display: block;
+    background-color: var(--color-white);
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    position: relative;
+    transition: background-color var(--transition-speed);
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    display: block;
+    background-color: var(--color-white);
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+    position: absolute;
+    transition: all var(--transition-speed);
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-dark-teal);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    z-index: 999;
+    transition: max-height var(--transition-speed), padding var(--transition-speed);
+}
+
+.mobile-menu-checkbox:checked ~ .mobile-nav {
+    max-height: 400px;
+    padding: 1rem;
+}
+
+.mobile-nav-link {
+    color: var(--color-white);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color var(--transition-speed);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+    background-color: var(--color-medium-teal);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+    padding: 2rem;
+}
+
+.hero-logo {
+    width: 150px;
+    height: auto;
+    margin: 0 auto 2rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+.title-line {
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-link {
+    color: var(--color-rust-orange);
+    text-decoration: underline;
+    font-weight: 700;
+    transition: color var(--transition-speed);
+}
+
+.hero-link:hover {
+    color: var(--color-tan);
+}
+
+/* ========================================
+   SECTION DIVIDER
+   ======================================== */
+.section-divider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.divider-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
+
+/* ========================================
+   SECTION TITLES
+   ======================================== */
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-dark-teal);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+}
+
+/* ========================================
+   EVENTS TODAY SECTION
+   ======================================== */
+.events-today {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-light-gray);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.event-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-content {
+    padding: var(--spacing-sm);
+}
+
+.event-title {
+    font-size: 1.25rem;
+    color: var(--color-dark-teal);
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    font-size: 1rem;
+    color: var(--color-rust-orange);
+    font-weight: 600;
+}
+
+/* ========================================
+   BROWSE IN VANCOUVER (GOOGLE MAPS)
+   ======================================== */
+.browse-vancouver {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.map-container {
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+/* ========================================
+   ACTIVITIES TO INSPIRE YOU
+   ======================================== */
+.activities-inspire {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-tan);
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.activity-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.activity-link {
+    display: block;
+}
+
+.activity-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.05);
+}
+
+.activity-content {
+    padding: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-title {
+    font-size: 1.5rem;
+    color: var(--color-dark-teal);
+}
+
+.visit-badge {
+    background-color: var(--color-rust-orange);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed);
+}
+
+.activity-card:hover .visit-badge {
+    background-color: var(--color-dark-teal);
+}
+
+/* ========================================
+   TRIP SECTION - CSS ONLY INTERACTIONS
+   ======================================== */
+.trip-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.trip-card {
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-sm);
+}
+
+.trip-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+}
+
+.trip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trip-toggle-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-dark-teal);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+    text-align: center;
+}
+
+.trip-toggle-btn:hover {
+    background-color: var(--color-rust-orange);
+}
+
+/* Hide "Hide Details" by default, show "View Details" */
+.trip-toggle-btn .btn-text-hide {
+    display: none;
+}
+
+.trip-toggle-btn .btn-text-show {
+    display: inline;
+}
+
+/* When checkbox is checked, swap the button text */
+.trip-checkbox:checked ~ .trip-toggle-btn .btn-text-hide {
+    display: inline;
+}
+
+.trip-checkbox:checked ~ .trip-toggle-btn .btn-text-show {
+    display: none;
+}
+
+.trip-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.trip-checkbox:checked ~ .trip-details {
+    max-height: 3000px;
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.trip-title {
+    font-size: 1.75rem;
+    color: var(--color-dark-teal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.trip-intro {
+    font-style: italic;
+    color: var(--color-rust-orange);
+    margin-bottom: var(--spacing-sm);
+}
+
+.trip-section-content {
+    margin-bottom: var(--spacing-sm);
+}
+
+.trip-section-content h4 {
+    color: var(--color-dark-teal);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.trip-section-content ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.trip-section-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   EXPERIENCES SECTION - CSS ONLY
+   ======================================== */
+.experiences-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-medium-teal);
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.experience-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    background-color: var(--color-white);
+}
+
+.experience-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.experience-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(48, 82, 92, 0.9);
+    color: var(--color-white);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    margin-top: 0;
+    transition: max-height 0.5s ease, padding 0.5s ease, margin-top 0.5s ease;
+}
+
+.experience-checkbox:checked ~ .experience-details {
+    max-height: 5000px;
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.close-details-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-rust-orange);
+    color: var(--color-white);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.close-details-btn:hover {
+    background-color: var(--color-dark-teal);
+}
+
+.experience-details-title {
+    font-size: 2rem;
+    color: var(--color-dark-teal);
+    margin-bottom: var(--spacing-md);
+}
+
+.adventure-item {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-light-gray);
+}
+
+.adventure-item:last-child {
+    border-bottom: none;
+}
+
+.adventure-image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+}
+
+.adventure-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.adventure-content h4 {
+    font-size: 1.75rem;
+    color: var(--color-dark-teal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.adventure-content p {
+    line-height: 1.8;
+    color: var(--color-black);
+}
+
+/* ========================================
+   CALENDAR SECTION
+   ======================================== */
+.calendar-section {
+    padding: var(--spacing-md) 0;
+    background-color: var(--color-tan);
+    text-align: center;
+}
+
+.calendar-link {
+    display: inline-block;
+}
+
+.calendar-btn {
+    padding: 1rem 2rem;
+    background-color: var(--color-rust-orange);
+    color: var(--color-white);
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.calendar-btn:hover {
+    background-color: var(--color-dark-teal);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   FOOD SECTION
+   ======================================== */
+.food-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-light-gray);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.food-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.food-link {
+    display: block;
+}
+
+.food-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.food-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.05);
+}
+
+.food-content {
+    padding: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-title {
+    font-size: 1.5rem;
+    color: var(--color-dark-teal);
+}
+
+.food-card:hover .visit-badge {
+    background-color: var(--color-dark-teal);
+}
+
+/* ========================================
+   BLOG SECTION - CSS ONLY
+   ======================================== */
+.blog-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.blog-post {
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.blog-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.blog-post:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-preview {
+    padding: var(--spacing-sm);
+}
+
+.blog-checkbox:checked ~ .blog-preview {
+    display: none;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    color: var(--color-dark-teal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-excerpt {
+    line-height: 1.6;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-rust-orange);
+    color: var(--color-white);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.read-more-btn:hover {
+    background-color: var(--color-dark-teal);
+}
+
+.blog-full-content {
+    display: none;
+    padding: var(--spacing-md);
+    background-color: var(--color-white);
+}
+
+.blog-checkbox:checked ~ .blog-full-content {
+    display: block;
+}
+
+.close-blog-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-rust-orange);
+    color: var(--color-white);
+    font-weight: 600;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.close-blog-btn:hover {
+    background-color: var(--color-dark-teal);
+}
+
+.blog-full-content h3 {
+    font-size: 1.75rem;
+    color: var(--color-dark-teal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-full-content h4 {
+    font-size: 1.5rem;
+    color: var(--color-dark-teal);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.blog-full-content p {
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-image-inline {
+    width: 100%;
+    margin: var(--spacing-sm) 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.blog-image-inline img {
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   TRENDING SECTION
+   ======================================== */
+.trending-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-tan);
+}
+
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.trending-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--box-shadow);
+}
+
+.trending-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+}
+
+.trending-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trending-content {
+    margin-bottom: var(--spacing-sm);
+}
+
+.trending-title {
+    font-size: 1.75rem;
+    color: var(--color-dark-teal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.trending-content h4 {
+    font-size: 1.5rem;
+    color: var(--color-dark-teal);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.trending-content p {
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xs);
+}
+
+.trending-image-secondary {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-sm);
+}
+
+.trending-image-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========================================
+   WELCOME TO VANCITY
+   ======================================== */
+.welcome-vancity {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-dark-teal);
+}
+
+.welcome-image {
+    width: 100%;
+}
+
+.welcome-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.welcome-text h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--color-white);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 900;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.main-footer {
+    background-color: var(--color-dark-teal);
+    color: var(--color-white);
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: var(--color-tan);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-nav a {
+    color: var(--color-white);
+    transition: color var(--transition-speed);
+}
+
+.footer-nav a:hover {
+    color: var(--color-rust-orange);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET
+   ======================================== */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-nav {
+        display: flex;
+    }
+    
+    .hero {
+        min-height: 60vh;
+    }
+    
+    .hero-logo {
+        width: 100px;
+    }
+    
+    .events-grid,
+    .activities-grid,
+    .trip-grid,
+    .food-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experiences-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        align-items: center;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        width: 95%;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    .experiences-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Focus states for keyboard navigation */
+a:focus,
+button:focus,
+label:focus {
+    outline: 3px solid var(--color-rust-orange);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+    .main-header,
+    .mobile-menu-btn,
+    .mobile-nav,
+    .main-footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .hero {
+        min-height: auto;
+        page-break-after: always;
+    }
+}
