@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crew Calls Find Your Film Crew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0b;
+  --bg2: #141412;
+  --bg3: #1c1c19;
+  --bg4: #242420;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.16);
+  --gold: #f0a020;
+  --gold-dim: #c07810;
+  --gold-bg: rgba(240,160,32,0.1);
+  --text: #f0ede8;
+  --text2: #a09d98;
+  --text3: #6a6760;
+  --green: #3ecf8e;
+  --green-bg: rgba(62,207,142,0.1);
+  --amber: #f0a020;
+  --amber-bg: rgba(240,160,32,0.12);
+  --red: #f05050;
+  --red-bg: rgba(240,80,80,0.1);
+  --blue: #60a0f0;
+  --blue-bg: rgba(96,160,240,0.1);
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.6;
+}
+h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
+a { text-decoration: none; color: inherit; }
+button { font-family: 'Inter', sans-serif; cursor: pointer; border: none; outline: none; }
+input, textarea, select { font-family: 'Inter', sans-serif; outline: none; }
+img { display: block; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(13,13,11,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  height: 56px;
+  display: flex; align-items: center;
+  padding: 0 32px;
+  gap: 32px;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer;
+}
+.nav-logo svg { width: 22px; height: 22px; }
+.nav-links { display: flex; gap: 4px; flex: 1; }
+.nav-link {
+  padding: 6px 14px;
+  font-size: 13px; color: var(--text2);
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.15s;
+}
+.nav-link:hover { color: var(--text); background: var(--bg3); }
+.nav-link.active { color: var(--gold); background: var(--gold-bg); }
+.nav-right { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.btn { padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 500; transition: all 0.15s; }
+.btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); }
+.btn-ghost:hover { border-color: var(--border-hover); color: var(--text); }
+.btn-primary { background: var(--gold); color: #1a0e00; border: none; }
+.btn-primary:hover { background: #f5b030; }
+.btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+.btn-outline:hover { background: var(--gold-bg); }
+.btn-sm { padding: 6px 14px; font-size: 12px; }
+
+/* SCREENS */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* HOME HERO */
+.hero {
+  min-height: 88vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 80px 32px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.hero-bg iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100%;
+  min-width: 177.78vh;
+  border: none;
+  pointer-events: none;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(13,13,11,0.3) 0%,
+    rgba(13,13,11,0.3) 40%,
+    rgba(13,13,11,0.82) 70%,
+    rgba(13,13,11,1.0) 100%
+  );
+}
+.hero > *:not(.hero-bg) {
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  color: var(--gold); text-transform: uppercase;
+  background: var(--gold-bg);
+  border: 1px solid rgba(240,160,32,0.2);
+  padding: 5px 14px; border-radius: 20px;
+  margin-bottom: 28px;
+  display: inline-block;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  max-width: 760px;
+}
+.hero h1 span { color: var(--gold); }
+.hero p {
+  font-size: 16px; color: var(--text2);
+  max-width: 480px; margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-btns .btn { padding: 12px 28px; font-size: 14px; }
+.hero-stats {
+  display: flex; gap: 48px;
+  margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat-num { font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; color: var(--gold); }
+.hero-stat-lbl { font-size: 12px; color: var(--text3); margin-top: 2px; }
+
+/* FEATURED CREW (home) */
+.section { padding: 72px 32px; max-width: 1140px; margin: 0 auto; }
+.section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 32px; }
+.section-title { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+.section-sub { font-size: 13px; color: var(--text3); }
+.see-all { font-size: 13px; color: var(--gold); cursor: pointer; }
+.see-all:hover { text-decoration: underline; }
+
+/* CREW CARDS */
+.crew-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.crew-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.crew-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.crew-card-cover {
+  width: 100%; height: 160px;
+  object-fit: cover;
+  background: var(--bg3);
+}
+.crew-card-cover-placeholder {
+  width: 100%; height: 160px;
+  background: var(--bg3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 40px; color: var(--text3);
+}
+.crew-card-body { padding: 14px; }
+.crew-card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 600; color: var(--gold);
+  flex-shrink: 0; overflow: hidden;
+  border: 2px solid var(--border);
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.crew-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.crew-role { font-size: 11px; color: var(--gold); background: var(--gold-bg); padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.badge-avail { font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 500; }
+.badge-green { background: var(--green-bg); color: var(--green); }
+.badge-amber { background: var(--amber-bg); color: var(--amber); }
+.badge-red { background: var(--red-bg); color: var(--red); }
+.crew-meta { font-size: 11px; color: var(--text3); margin: 6px 0 4px; display: flex; align-items: center; gap: 4px; }
+.stars { color: var(--gold); font-size: 11px; }
+.crew-rate { font-size: 13px; color: var(--gold); font-weight: 600; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+.tag {
+  font-size: 10px; padding: 2px 8px; border-radius: 20px;
+  background: var(--bg4); color: var(--text2);
+  border: 1px solid var(--border);
+}
+
+/* PROJECT CARDS */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.project-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  cursor: pointer; transition: border-color 0.2s, transform 0.2s;
+}
+.project-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.project-card-cover { width: 100%; height: 180px; object-fit: cover; background: var(--bg3); }
+.project-card-body { padding: 16px; }
+.project-tags { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.ptag { font-size: 10px; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
+.ptag-doc { background: rgba(96,160,240,0.15); color: #80b8f8; }
+.ptag-short { background: rgba(160,96,240,0.15); color: #c080f8; }
+.ptag-music { background: rgba(240,96,96,0.15); color: #f88080; }
+.ptag-web { background: rgba(96,207,142,0.15); color: #60df9e; }
+.ptag-comm { background: rgba(240,200,96,0.15); color: #f8d060; }
+.ptag-open { background: var(--green-bg); color: var(--green); }
+.ptag-closed { background: var(--red-bg); color: var(--red); }
+.project-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+.project-desc { font-size: 12px; color: var(--text2); line-height: 1.5; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.project-meta { font-size: 11px; color: var(--text3); display: flex; flex-direction: column; gap: 3px; }
+.meta-row { display: flex; align-items: center; gap: 5px; }
+.meta-row svg { flex-shrink: 0; }
+
+/* FIND CREW PAGE */
+.page-header { padding: 40px 32px 0; max-width: 1140px; margin: 0 auto; }
+.page-title { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+.page-sub { font-size: 14px; color: var(--text2); }
+.search-area { padding: 20px 32px; max-width: 1140px; margin: 0 auto; display: flex; gap: 10px; }
+.search-input-wrap { flex: 1; position: relative; }
+.search-input-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text3); }
+.search-input {
+  width: 100%; padding: 10px 12px 10px 38px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text); font-size: 13px;
+  transition: border-color 0.15s;
+}
+.search-input:focus { border-color: var(--gold); }
+.search-input::placeholder { color: var(--text3); }
+.filter-chip {
+  padding: 10px 16px; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 13px; color: var(--text2); cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-chip:hover { border-color: var(--border-hover); color: var(--text); }
+.filter-chip.active { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); }
+.results-bar { padding: 0 32px 16px; max-width: 1140px; margin: 0 auto; font-size: 12px; color: var(--text3); }
+.content-area { padding: 0 32px 48px; max-width: 1140px; margin: 0 auto; }
+
+/* PROFILE PAGE */
+.profile-page { max-width: 860px; margin: 0 auto; padding: 32px; }
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--text3); cursor: pointer;
+  margin-bottom: 24px; background: none;
+  transition: color 0.15s;
+}
+.back-btn:hover { color: var(--text); }
+.profile-header {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px; margin-bottom: 16px;
+}
+.profile-header-top { display: flex; gap: 20px; align-items: flex-start; }
+.avatar-xl {
+  width: 80px; height: 80px; border-radius: 50%;
+  flex-shrink: 0; overflow: hidden;
+  border: 3px solid var(--border); background: var(--bg4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 700; color: var(--gold);
+}
+.avatar-xl img { width: 100%; height: 100%; object-fit: cover; }
+.profile-name { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+.profile-roles { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.profile-meta-row { font-size: 12px; color: var(--text2); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.profile-meta-row a { color: var(--blue); display: flex; align-items: center; gap: 4px; }
+.profile-meta-row a:hover { text-decoration: underline; }
+.profile-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.profile-section {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 18px;
+}
+.profile-section h4 { font-size: 13px; font-weight: 600; margin-bottom: 12px; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; }
+.detail-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.detail-row:last-child { border-bottom: none; }
+.detail-row .dval { font-weight: 500; }
+.detail-row .dval.gold { color: var(--gold); }
+
+/* RATINGS */
+.rating-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+.rating-item:last-child { border-bottom: none; }
+.rating-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.rating-author { font-size: 13px; font-weight: 500; }
+.rating-date { font-size: 11px; color: var(--text3); }
+.rating-stars { color: var(--gold); font-size: 12px; margin-bottom: 4px; }
+.rating-text { font-size: 12px; color: var(--text2); line-height: 1.5; }
+.rating-project { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+/* PROJECT DETAIL */
+.project-detail { max-width: 860px; margin: 0 auto; padding: 32px; }
+.project-detail-cover { width: 100%; height: 280px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 20px; background: var(--bg3); }
+.project-detail-header {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px; margin-bottom: 16px;
+}
+.project-detail-title { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+.project-detail-desc { font-size: 14px; color: var(--text2); line-height: 1.7; margin-top: 12px; }
+.role-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px; margin-bottom: 10px;
+}
+.role-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.role-title { font-size: 14px; font-weight: 600; }
+.role-rate { font-size: 13px; color: var(--gold); font-weight: 600; }
+.role-desc { font-size: 12px; color: var(--text2); line-height: 1.5; margin-bottom: 10px; }
+.apply-btn { width: 100%; padding: 9px; background: var(--gold); color: #1a0e00; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; transition: background 0.15s; }
+.apply-btn:hover { background: #f5b030; }
+.apply-btn.applied { background: var(--green-bg); color: var(--green); border: 1px solid var(--green); cursor: default; }
+
+/* DASHBOARD */
+.dash-layout { max-width: 1140px; margin: 0 auto; padding: 32px; }
+.dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+.dash-title { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+.dash-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+.dash-metric { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; text-align: center; }
+.dash-metric .num { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--gold); }
+.dash-metric .lbl { font-size: 12px; color: var(--text3); margin-top: 4px; }
+.empty-state { text-align: center; padding: 60px 20px; }
+.empty-state-icon { font-size: 48px; margin-bottom: 16px; color: var(--text3); }
+.empty-state p { font-size: 14px; color: var(--text2); margin-bottom: 6px; }
+.empty-state small { font-size: 12px; color: var(--text3); }
+
+/* POST A PROJECT */
+.post-layout { max-width: 680px; margin: 0 auto; padding: 32px; }
+.form-section { margin-bottom: 28px; }
+.form-section-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 12px; font-weight: 500; color: var(--text2); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 10px 12px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text); font-size: 13px;
+  transition: border-color 0.15s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--text3); }
+.form-select { color: var(--text2); }
+.form-textarea { min-height: 90px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.submit-btn { width: 100%; padding: 14px; background: var(--gold); color: #1a0e00; border-radius: var(--radius); font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: background 0.15s; font-family: 'Syne', sans-serif; letter-spacing: 0.02em; }
+.submit-btn:hover { background: #f5b030; }
+
+/* HOW IT WORKS */
+.how-section { background: var(--bg2); padding: 72px 32px; }
+.how-inner { max-width: 860px; margin: 0 auto; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 36px; }
+.how-step { }
+.how-num { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+.how-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.how-step p { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 32px;
+  max-width: 1140px; margin: 0 auto;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; }
+.footer-brand { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; color: var(--gold); margin-bottom: 6px; }
+.footer-tagline { font-size: 12px; color: var(--text3); max-width: 220px; line-height: 1.5; }
+.footer-col h5 { font-size: 11px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.footer-col a { display: block; font-size: 13px; color: var(--text3); margin-bottom: 6px; cursor: pointer; transition: color 0.15s; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom { margin-top: 28px; padding-top: 20px; font-size: 11px; color: var(--text3); text-align: center; }
+
+/* APPLY MODAL */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.7); align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px;
+  width: 100%; max-width: 480px;
+}
+.modal-title { font-size: 18px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.01em; }
+.modal-sub { font-size: 13px; color: var(--text2); margin-bottom: 20px; }
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; color: var(--text2); padding: 6px 10px;
+  cursor: pointer; font-size: 16px;
+}
+.modal-relative { position: relative; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 28px; right: 28px; z-index: 300;
+  background: var(--bg3); border: 1px solid var(--green);
+  color: var(--green); border-radius: var(--radius);
+  padding: 12px 20px; font-size: 13px; font-weight: 500;
+  transform: translateY(80px); opacity: 0;
+  transition: all 0.3s ease;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* RATING FORM */
+.rating-form { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.star-select { display: flex; gap: 4px; margin-bottom: 12px; }
+.star-btn { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text3); transition: color 0.1s; padding: 0; }
+.star-btn.lit { color: var(--gold); }
+
+/* LINKEDIN BADGE */
+.linkedin-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; color: #60a0f0;
+  background: rgba(96,160,240,0.1); border: 1px solid rgba(96,160,240,0.2);
+  padding: 3px 9px; border-radius: 20px;
+  cursor: pointer; transition: background 0.15s;
+}
+.linkedin-badge:hover { background: rgba(96,160,240,0.18); }
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: 36px; }
+  .hero-stats { gap: 24px; }
+  .how-grid { grid-template-columns: 1fr; }
+  .profile-body { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .dash-metrics { grid-template-columns: repeat(2,1fr); }
+  .section { padding: 48px 16px; }
+  .content-area, .page-header, .search-area, .results-bar { padding-left: 16px; padding-right: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo" onclick="showScreen('home')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 2v20M16 2v20M2 8h6M2 16h6M16 8h6M16 16h6"/>
+    </svg>
+    Crew Calls
+  </div>
+  <div class="nav-links">
+    <button class="nav-link" id="nl-find" onclick="showScreen('find')">Find Crew</button>
+    <button class="nav-link" id="nl-browse" onclick="showScreen('browse')">Browse Projects</button>
+    <button class="nav-link" id="nl-post" onclick="showScreen('post')">Post a Project</button>
+    <button class="nav-link" id="nl-dashboard" onclick="showScreen('dashboard')">Dashboard</button>
+  </div>
+  <div class="nav-right">
+    <button class="btn btn-ghost btn-sm" onclick="openLoginModal()">Log in</button>
+    <button class="btn btn-primary btn-sm" onclick="openSignupModal()">Join free</button>
+  </div>
+</nav>
+
+<!-- SCREENS -->
+
+<!-- HOME -->
+<div id="screen-home" class="screen active">
+  <div class="hero">
+    <div class="hero-bg">
+    <iframe
+      src="https://player.vimeo.com/video/701381520?h=d9d9b89659&autoplay=1&loop=1&muted=1&background=1&quality=1080p#t=6s"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      title="CrewCall hero background">
+    </iframe>
+  </div>
+    <div class="hero-eyebrow">Now live in Vancouver & beyond</div>
+    <h1>Find Your Film<br><span>Crew.</span></h1>
+    <p>The platform built for independent filmmakers and directors. Find crew who actually care about the work not just the rate.</p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" onclick="showScreen('find')">Find a Crew</button>
+      <button class="btn btn-outline" onclick="showScreen('post')">Post your Project</button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">500+</div><div class="hero-stat-lbl">Crew Members</div></div>
+      <div><div class="hero-stat-num">200+</div><div class="hero-stat-lbl">Projects Completed</div></div>
+      <div><div class="hero-stat-num">50+</div><div class="hero-stat-lbl">Cities</div></div>
+    </div>
+  </div>
+
+  <div class="how-section">
+    <div class="how-inner">
+      <div class="section-title">How it works</div>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-num">Step 01</div>
+          <h3>Post Your Project</h3>
+          <p>Describe your film, set days, budget, and list the crew roles you need. Takes under 5 minutes.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-num">Step 02</div>
+          <h3>Browse & Connect</h3>
+          <p>Search by role, location, experience, and availability. Review portfolios and verified ratings.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-num">Step 03</div>
+          <h3>Start Filming</h3>
+          <p>Accept applications, finalize your crew, secure bookings with a deposit, and bring your vision to life.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Featured Crew</div>
+        <div class="section-sub" style="margin-top:4px">Verified filmmakers available for your next project</div>
+      </div>
+      <span class="see-all" onclick="showScreen('find')">View all crew →</span>
+    </div>
+    <div class="crew-grid" id="home-crew-grid"></div>
+  </div>
+
+  <div class="section" style="padding-top:0">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Open Projects</div>
+        <div class="section-sub" style="margin-top:4px">Projects actively looking for crew</div>
+      </div>
+      <span class="see-all" onclick="showScreen('browse')">Browse all →</span>
+    </div>
+    <div class="project-grid" id="home-project-grid"></div>
+  </div>
+
+  <div style="background:var(--bg2);padding:60px 32px;text-align:center;margin-bottom:0">
+    <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;margin-bottom:12px">Ready to build your dream crew?</h2>
+    <p style="color:var(--text2);font-size:14px;margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto">Join Crew Calls and connect with talented filmmakers in your area.</p>
+    <button class="btn btn-primary" style="padding:12px 32px;font-size:14px" onclick="showScreen('post')">Post Your Project</button>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Crew Calls</div>
+        <div class="footer-tagline">The platform built for indie filmmakers. Find crew, post projects, and bring your vision to life.</div>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <a onclick="showScreen('find')">Find Crew</a>
+        <a onclick="showScreen('browse')">Browse Projects</a>
+        <a onclick="showScreen('post')">Post a Project</a>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <a>How it Works</a>
+        <a>FAQ</a>
+        <a>Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a>About</a>
+        <a>Contact</a>
+        <a>Blog</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Crew Calls. Connecting filmmakers worldwide.</div>
+  </footer>
+</div>
+
+<!-- FIND CREW -->
+<div id="screen-find" class="screen">
+  <div class="page-header">
+    <div class="page-title">Find Crew Members</div>
+    <div class="page-sub">Browse talented filmmakers available for your next project.</div>
+  </div>
+  <div class="search-area">
+    <div class="search-input-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input class="search-input" id="crew-search" placeholder="Search by name, role, skills, or location..." oninput="filterCrew()">
+    </div>
+    <button class="filter-chip active" id="filter-all" onclick="setFilter('all')">All</button>
+    <button class="filter-chip" id="filter-available" onclick="setFilter('available')">Available</button>
+    <button class="filter-chip" id="filter-vancouver" onclick="setFilter('vancouver')">Vancouver</button>
+  </div>
+  <div class="results-bar" id="crew-results-bar">6 crew members found</div>
+  <div class="content-area">
+    <div class="crew-grid" id="find-crew-grid"></div>
+  </div>
+</div>
+
+<!-- BROWSE PROJECTS -->
+<div id="screen-browse" class="screen">
+  <div class="page-header">
+    <div class="page-title">Browse Projects</div>
+    <div class="page-sub">Find open film projects looking for crew members like you.</div>
+  </div>
+  <div class="search-area">
+    <div class="search-input-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input class="search-input" id="proj-search" placeholder="Search by title, genre, or location..." oninput="filterProjects()">
+    </div>
+    <button class="filter-chip active" id="pfilter-all" onclick="setProjFilter('all')">All</button>
+    <button class="filter-chip" id="pfilter-open" onclick="setProjFilter('open')">Open</button>
+    <button class="filter-chip" id="pfilter-vancouver" onclick="setProjFilter('vancouver')">Vancouver</button>
+  </div>
+  <div class="results-bar" id="proj-results-bar">6 projects found</div>
+  <div class="content-area">
+    <div class="project-grid" id="browse-project-grid"></div>
+  </div>
+</div>
+
+<!-- PROFILE PAGE -->
+<div id="screen-profile" class="screen">
+  <div class="profile-page">
+    <button class="back-btn" onclick="goBack()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to crew
+    </button>
+    <div class="profile-header">
+      <div class="profile-header-top">
+        <div class="avatar-xl" id="pf-avatar-wrap"><span id="pf-initials"></span></div>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+            <div class="profile-name" id="pf-name"></div>
+            <span class="badge-avail" id="pf-status"></span>
+          </div>
+          <div class="profile-roles" id="pf-roles"></div>
+          <div class="profile-meta-row">
+            <span id="pf-location"></span>
+            <span id="pf-exp"></span>
+            <span style="color:var(--gold);font-weight:600" id="pf-rate"></span>
+            <span id="pf-stars"></span>
+            <a id="pf-linkedin" href="#" onclick="return false;" style="display:none">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-body" id="pf-body"></div>
+    <div class="profile-section" style="margin-top:16px" id="pf-ratings-section">
+      <h4>Ratings & reviews</h4>
+      <div id="pf-ratings-list"></div>
+      <div class="rating-form">
+        <div style="font-size:13px;font-weight:600;margin-bottom:8px">Leave a review</div>
+        <div class="star-select" id="star-select">
+          <button class="star-btn" onclick="setStar(1)">★</button>
+          <button class="star-btn" onclick="setStar(2)">★</button>
+          <button class="star-btn" onclick="setStar(3)">★</button>
+          <button class="star-btn" onclick="setStar(4)">★</button>
+          <button class="star-btn" onclick="setStar(5)">★</button>
+        </div>
+        <textarea class="form-textarea" id="review-text" placeholder="Share your experience working with this crew member..." style="margin-bottom:8px"></textarea>
+        <button class="btn btn-primary btn-sm" onclick="submitReview()">Post review</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT DETAIL -->
+<div id="screen-project" class="screen">
+  <div class="project-detail">
+    <button class="back-btn" onclick="goBackProject()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to projects
+    </button>
+    <img id="pd-cover" class="project-detail-cover" src="" alt="Project cover">
+    <div class="project-detail-header">
+      <div class="project-tags" id="pd-tags"></div>
+      <div class="project-detail-title" id="pd-title"></div>
+      <div class="profile-meta-row" style="margin-top:8px">
+        <span id="pd-loc"></span>
+        <span id="pd-dates"></span>
+        <span style="color:var(--gold);font-weight:600" id="pd-budget"></span>
+        <span id="pd-director"></span>
+      </div>
+      <div class="project-detail-desc" id="pd-desc"></div>
+    </div>
+    <div class="profile-section">
+      <h4 id="pd-roles-title">Crew Roles Needed</h4>
+      <div id="pd-roles"></div>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="screen-dashboard" class="screen">
+  <div class="dash-layout">
+    <div class="dash-header">
+      <div class="dash-title">Dashboard</div>
+      <button class="btn btn-primary" onclick="showScreen('post')">+ New Project</button>
+    </div>
+    <div class="dash-metrics">
+      <div class="dash-metric"><div class="num">0</div><div class="lbl">My Projects</div></div>
+      <div class="dash-metric"><div class="num">0</div><div class="lbl">Applications</div></div>
+      <div class="dash-metric"><div class="num">0</div><div class="lbl">Active Shoots</div></div>
+    </div>
+    <div class="profile-section">
+      <div class="empty-state">
+        <div class="empty-state-icon">🎬</div>
+        <p>No projects yet</p>
+        <small>Post your first project to start finding crew members.</small>
+        <br><br>
+        <button class="btn btn-primary" onclick="showScreen('post')">Post a Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST A PROJECT -->
+<div id="screen-post" class="screen">
+  <div class="post-layout">
+    <div style="margin-bottom:28px">
+      <div class="page-title">Post a Project</div>
+      <div class="page-sub" style="margin-top:6px">Describe your project and the crew roles you're looking to fill.</div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Project details</div>
+      <div class="form-group">
+        <label class="form-label">Project title *</label>
+        <input class="form-input" placeholder="e.g. Echoes of Tomorrow">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description *</label>
+        <textarea class="form-textarea" placeholder="Describe your project, its vision, and what you're looking for..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Project type *</label>
+          <select class="form-select">
+            <option value="">Select type</option>
+            <option>Short Film</option><option>Documentary</option>
+            <option>Music Video</option><option>Commercial</option><option>Web Series</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location *</label>
+          <input class="form-input" placeholder="e.g. Vancouver, BC">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Start date</label>
+          <input class="form-input" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">End date</label>
+          <input class="form-input" type="date">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Budget min ($)</label>
+          <input class="form-input" type="number" placeholder="1000">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Budget max ($)</label>
+          <input class="form-input" type="number" placeholder="5000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Director name</label>
+        <input class="form-input" placeholder="Your name">
+      </div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Crew roles needed</div>
+      <div class="form-group">
+        <label class="form-label">Role title</label>
+        <input class="form-input" placeholder="e.g. Cinematographer">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Day rate ($)</label>
+          <input class="form-input" type="number" placeholder="400">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Experience level</label>
+          <select class="form-select"><option>Any</option><option>Entry</option><option>Mid</option><option>Senior</option></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Role description</label>
+        <textarea class="form-textarea" placeholder="Describe what you need from this role..."></textarea>
+      </div>
+    </div>
+    <button class="submit-btn" onclick="submitProject()">Post Project</button>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal modal-relative" style="max-width:420px">
+    <button class="modal-close" onclick="closeLoginModal()">✕</button>
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--gold);margin-bottom:4px">Crew Calls</div>
+      <div class="modal-title">Welcome back</div>
+      <div class="modal-sub">Log in to your account</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input class="form-input" type="email" placeholder="you@email.com">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input class="form-input" type="password" placeholder="••••••••">
+    </div>
+    <button class="submit-btn" onclick="closeLoginModal();showToast('Welcome back!')" style="margin-top:8px">Log in</button>
+    <div style="text-align:center;margin-top:16px;font-size:12px;color:var(--text3)">
+      No account yet?
+      <span style="color:var(--gold);cursor:pointer" onclick="closeLoginModal();openSignupModal()">Join free</span>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP MODAL -->
+<div class="modal-overlay" id="signup-modal">
+  <div class="modal modal-relative" style="max-width:460px">
+    <button class="modal-close" onclick="closeSignupModal()">✕</button>
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--gold);margin-bottom:4px">Crew Calls</div>
+      <div class="modal-title">Join the community</div>
+      <div class="modal-sub">Free to join. 8% commission only when work happens.</div>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-bottom:20px">
+      <div id="role-director" class="role-toggle active" onclick="selectRole('director')" style="flex:1;padding:14px;border:1px solid var(--gold);border-radius:var(--radius);cursor:pointer;text-align:center;background:var(--gold-bg)">
+        <div style="font-size:20px;margin-bottom:6px">🎬</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text)">Director</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">Post projects, find crew</div>
+      </div>
+      <div id="role-crew" class="role-toggle" onclick="selectRole('crew')" style="flex:1;padding:14px;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;text-align:center">
+        <div style="font-size:20px;margin-bottom:6px">🎥</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text)">Crew Member</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">Get hired, build your reel</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">First name</label>
+        <input class="form-input" placeholder="Miguel">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Last name</label>
+        <input class="form-input" placeholder="Outta Frame">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input class="form-input" type="email" placeholder="you@email.com">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <input class="form-input" type="password" placeholder="Min. 8 characters">
+    </div>
+
+    <button class="submit-btn" onclick="closeSignupModal();showToast('Welcome to Crew Calls!')" style="margin-top:8px">Create free account</button>
+
+    <div style="margin-top:16px;padding:12px;background:var(--bg3);border-radius:var(--radius);display:flex;gap:10px;align-items:flex-start">
+      <span style="color:var(--green);font-size:14px;flex-shrink:0">✓</span>
+      <span style="font-size:12px;color:var(--text3);line-height:1.5">Free to join and browse. We take <strong style="color:var(--text)">8% commission</strong> only when a booking is confirmed. No subscriptions, no hidden fees.</span>
+    </div>
+
+    <div style="text-align:center;margin-top:14px;font-size:12px;color:var(--text3)">
+      Already have an account?
+      <span style="color:var(--gold);cursor:pointer" onclick="closeSignupModal();openLoginModal()">Log in</span>
+    </div>
+  </div>
+</div>
+
+<!-- APPLY MODAL -->
+<div class="modal-overlay" id="apply-modal">
+  <div class="modal modal-relative">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title" id="modal-role-title">Apply for Role</div>
+    <div class="modal-sub" id="modal-project-name">Project name</div>
+    <div class="form-group">
+      <label class="form-label">Cover message</label>
+      <textarea class="form-textarea" id="modal-message" placeholder="Tell the director why you're the right fit for this role..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Portfolio / reel link</label>
+      <input class="form-input" id="modal-reel" placeholder="https://vimeo.com/...">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Day rate expectation ($)</label>
+      <input class="form-input" type="number" id="modal-rate" placeholder="400">
+    </div>
+    <button class="submit-btn" onclick="submitApplication()" style="margin-top:8px">Submit Application</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// DATA
+const crew = [
+  {
+    id:'sofia', initials:'SN', name:'Kayoyo Nakamura',
+    photo:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop&crop=face',
+    cover:'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=300&fit=crop',
+    status:'available', statusLabel:'Available',
+    roles:['Makeup Artist','Hair Stylist','SFX Makeup'],
+    location:'Los Angeles, CA', exp:'10 yrs exp', rate:'$400/day',
+    stars:'★★★★★', rating:4.9,
+    about:'Versatile makeup artist with 10 years in film and TV. Specializes in beauty, character transformations, and SFX. Two Emmy-nominated productions.',
+    skills:['Beauty Makeup','SFX Makeup','Prosthetics','Hair Styling','Wig Work','Aging Techniques'],
+    equipment:['Full Makeup Kit','SFX Supplies','Airbrush System'],
+    projects:45, avail:'2026-06-16',
+    linkedin:'https://linkedin.com',
+    ratings:[
+      {author:'Sarah Mitchell',date:'May 2026',stars:'★★★★★',text:'Kayoyo is an absolute pro. Transformed our lead actor perfectly within the tight schedule. Will definitely work with her again.',project:'Echoes of Tomorrow'},
+      {author:'Jake Williams',date:'Apr 2026',stars:'★★★★★',text:'Incredible SFX work on our music video. Creative, fast, and communicative on set.',project:'Neon Dreams MV'},
+    ]
+  },
+  {
+    id:'david', initials:'DK', name:'David Kim',
+    photo:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face',
+    cover:'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=300&fit=crop',
+    status:'on-project', statusLabel:'On Project',
+    roles:['Director','Writer','Producer'],
+    location:'Los Angeles, CA', exp:'9 yrs exp', rate:'$500/day',
+    stars:'★★★★★', rating:4.9,
+    about:'Independent filmmaker focused on character-driven stories. Two short films selected for Sundance and SXSW. Passionate about authentic narratives.',
+    skills:['Directing','Screenwriting','Shot Listing','Storyboarding','Casting','Post Supervision'],
+    equipment:['Shotdeck Account','Storyboard Software'],
+    projects:12, avail:'2026-08-01',
+    linkedin:'https://linkedin.com',
+    ratings:[
+      {author:'Tom Anderson',date:'Mar 2026',stars:'★★★★★',text:'David brought a vision I didn\'t even know I had. His storytelling instincts are exceptional.',project:'Café Conversations'},
+    ]
+  },
+  {
+    id:'maya', initials:'MR', name:'Maya Rodriguez',
+    photo:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face',
+    cover:'https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600&h=300&fit=crop',
+    status:'available', statusLabel:'Available',
+    roles:['Cinematographer','Camera Operator','Colorist'],
+    location:'Los Angeles, CA', exp:'8 yrs exp', rate:'$450/day',
+    stars:'★★★★½', rating:4.7,
+    about:'Award-winning cinematographer with 8 years in indie films and music videos. Passionate about natural light and handheld intimacy.',
+    skills:['ARRI Alexa','RED Komodo','DaVinci Resolve','Drone Operation','Color Grading'],
+    equipment:['RED Komodo','DJI RS3 Gimbal','Aperture 60x4','Various Lenses'],
+    projects:34, avail:'2026-06-01',
+    linkedin:'https://linkedin.com',
+    ratings:[
+      {author:'Maria Garcia',date:'May 2026',stars:'★★★★★',text:'Maya shot our documentary in a way I never could have imagined. The natural light work is stunning.',project:'The Last Bookstore'},
+      {author:'Sarah Mitchell',date:'Feb 2026',stars:'★★★★',text:'Great work on the sci-fi sequences. Very collaborative with the gaffer.',project:'Echoes of Tomorrow'},
+    ]
+  },
+  {
+    id:'emma', initials:'EL', name:'Emma Larsson',
+    photo:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face',
+    cover:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=600&h=300&fit=crop',
+    status:'available', statusLabel:'Available',
+    roles:['Editor','Colorist','Motion Graphics'],
+    location:'San Francisco, CA', exp:'5 yrs exp', rate:'$400/day',
+    stars:'★★★★★', rating:4.8,
+    about:'Creative editor with a sharp eye for pacing and storytelling. Proficient in Premiere Pro, DaVinci Resolve, and After Effects. Strong in music video and narrative.',
+    skills:['Premiere Pro','DaVinci Resolve','After Effects','Color Grading','Motion Graphics','Sound Editing'],
+    equipment:['Mac Studio','Dual 4K Monitors','Calibrated Display'],
+    projects:27, avail:'2026-06-01',
+    linkedin:'https://linkedin.com',
+    ratings:[
+      {author:'Jake Williams',date:'Apr 2026',stars:'★★★★★',text:'Emma cut our music video in 2 days and it looked incredible. The pacing is perfect.',project:'Neon Dreams MV'},
+    ]
+  },
+  {
+    id:'marcus', initials:'MT', name:'Marcus Thompson',
+    photo:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
+    cover:'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=300&fit=crop',
+    status:'available', statusLabel:'Available',
+    roles:['Actor','Voice Actor','Stunt Performer'],
+    location:'Atlanta, GA', exp:'6 yrs exp', rate:'$300/day',
+    stars:'★★★★½', rating:4.7,
+    about:'Trained actor with MFA from NYU Tisch. Experienced in drama, comedy, and action. Available for indie and student films year-round.',
+    skills:['Method Acting','Improv','Stage Combat','Dialect Work','Voice Over','Motion Capture'],
+    equipment:['Self-tape Setup','Home Studio for VO'],
+    projects:18, avail:'2026-05-15',
+    linkedin:null,
+    ratings:[
+      {author:'Tom Anderson',date:'Mar 2026',stars:'★★★★★',text:'Marcus understood his character immediately. No direction needed on set he just knew.',project:'Café Conversations'},
+    ]
+  },
+  {
+    id:'james', initials:'JC', name:'James Chen',
+    photo:'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop&crop=face',
+    cover:'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&h=300&fit=crop',
+    status:'available', statusLabel:'Available',
+    roles:['Sound Recordist','Boom Operator','Sound Designer'],
+    location:'New York, NY', exp:'5 yrs exp', rate:'$350/day',
+    stars:'★★★★½', rating:4.6,
+    about:'Professional sound recordist specializing in location audio for narrative films. Clean dialogue is my obsession. IFB and timecode experience.',
+    skills:['Location Sound','Boom Operation','Wireless Systems','Sound Design','Pro Tools'],
+    equipment:['Sound Devices MixPre-6','Sennheiser MKH 416','Lectrosonics Wireless'],
+    projects:22, avail:'2026-05-30',
+    linkedin:'https://linkedin.com',
+    ratings:[
+      {author:'Maria Garcia',date:'Apr 2026',stars:'★★★★★',text:'James had clean audio even in the noisiest café scenes. Total pro.',project:'The Last Bookstore'},
+    ]
+  },
+];
+
+const projects = [
+  {
+    id:'iohosihoxs',
+    cover:'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=700&h=350&fit=crop',
+    tags:[{cls:'ptag-doc',label:'Documentary'},{cls:'ptag-open',label:'Open'}],
+    title:'iohosihoxs',
+    desc:'A sci-fi short film about a woman who discovers she can communicate with her future self through an old radio. 15-minute narrative exploring themes of regret and second chances.',
+    location:'Vancouver, BC', dates:'Jun 15 to Jun 21, 2026', budget:'$1,000 to $40,000', director:'Leemon',
+    status:'open', city:'vancouver',
+    roles:[
+      {title:'Cinematographer',rate:'$300/day',desc:'Portrait-style shooting. Experience with intimate sci-fi setups preferred.',applied:false},
+    ]
+  },
+  {
+    id:'echoes',
+    cover:'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=700&h=350&fit=crop',
+    tags:[{cls:'ptag-short',label:'Short Film'},{cls:'ptag-open',label:'Open'}],
+    title:'Echoes of Tomorrow',
+    desc:'A sci-fi short film about a woman who discovers she can communicate with her future self. 15-minute narrative exploring themes of regret and second chances.',
+    location:'Los Angeles, CA', dates:'Jul 10 to Jul 12, 2026', budget:'$3,000 to $5,000', director:'Sarah Mitchell',
+    status:'open', city:'la',
+    roles:[
+      {title:'Actor',rate:'$400/day',desc:'Lead role: Woman, 30 to 40. Self-tape auditions accepted. Dramatic range required.',applied:false},
+      {title:'Makeup Artist',rate:'$300/day',desc:'Light beauty makeup plus subtle aging effects for future-self scenes.',applied:false},
+      {title:'Sound Recordist',rate:'$350/day',desc:'Clean dialogue recording essential. Must have own equipment.',applied:false},
+      {title:'Cinematographer',rate:'$450/day',desc:'Experienced DP comfortable with sci-fi lighting setups and handheld work.',applied:false},
+    ]
+  },
+  {
+    id:'neon',
+    cover:'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=700&h=350&fit=crop',
+    tags:[{cls:'ptag-music',label:'Music Video'},{cls:'ptag-open',label:'Open'}],
+    title:'Neon Dreams Music Video',
+    desc:'High-energy music video for an up-and-coming indie band. Cyberpunk aesthetic with neon lighting, urban locations, and dynamic camera work. One-day shoot.',
+    location:'New York, NY', dates:'Jun 20, 2026', budget:'$2,000 to $3,500', director:'Jake Williams',
+    status:'open', city:'ny',
+    roles:[
+      {title:'Production Assistant',rate:'$150/day',desc:'Help with setup, equipment transport, and general on-set support.',applied:false},
+      {title:'Lighting Technician',rate:'$375/day',desc:'Creative lighting with RGB LEDs and practicals. Cyberpunk aesthetic required.',applied:false},
+      {title:'Cinematographer',rate:'$500/day',desc:'Fast-paced shooting, neon low-light essential. Gimbal work needed.',applied:false},
+    ]
+  },
+  {
+    id:'bookstore',
+    cover:'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=700&h=350&fit=crop',
+    tags:[{cls:'ptag-doc',label:'Documentary'},{cls:'ptag-open',label:'Open'}],
+    title:'The Last Bookstore',
+    desc:'Documentary short about the last independent bookstore in a small Midwest town. Intimate, character-driven storytelling with vérité style.',
+    location:'Chicago, IL', dates:'Aug 1 to Aug 5, 2026', budget:'$1,500 to $2,500', director:'Maria Garcia',
+    status:'open', city:'chicago',
+    roles:[
+      {title:'Sound Recordist',rate:'$300/day',desc:'Interview and ambient sound recording. Lav mic experience required.',applied:false},
+      {title:'Cinematographer',rate:'$350/day',desc:'Vérité documentary style. Must be comfortable with handheld and natural light.',applied:false},
+    ]
+  },
+  {
+    id:'cafe',
+    cover:'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&h=350&fit=crop',
+    tags:[{cls:'ptag-web',label:'Web Series'},{cls:'ptag-open',label:'Open'}],
+    title:'Café Conversations',
+    desc:'A slice-of-life web series pilot following interconnected regulars at a neighborhood café. Warm, ensemble cast needed.',
+    location:'Austin, TX', dates:'Jul 25 to Jul 30, 2026', budget:'$4,000 to $7,000', director:'Tom Anderson',
+    status:'open', city:'austin',
+    roles:[
+      {title:'Production Assistant',rate:'$150/day',desc:'Multiple roles available. Looking for diverse ensemble cast, ages 20 to 50.',applied:false},
+      {title:'Actor',rate:'$250/day',desc:'Multiple roles available. Dialogue-heavy scenes in café setting.',applied:false},
+      {title:'Makeup Artist',rate:'$300/day',desc:'Natural beauty looks for ensemble cast of 6 actors.',applied:false},
+      {title:'Sound Recordist',rate:'$350/day',desc:'Multi-person dialogue scenes in a noisy café. Noise management skills needed.',applied:false},
+      {title:'Cinematographer',rate:'$400/day',desc:'Warm, intimate cinematography for dialogue-heavy scenes.',applied:false},
+    ]
+  },
+  {
+    id:'artisan',
+    cover:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700&h=350&fit=crop',
+    tags:[{cls:'ptag-comm',label:'Commercial'},{cls:'ptag-open',label:'Open'}],
+    title:'Artisan Bread Co Commercial',
+    desc:'30-second commercial for a local artisan bakery. Warm, inviting visuals showcasing the bread-making process. Tabletop and lifestyle shots needed.',
+    location:'San Francisco, CA', dates:'Jun 15, 2026', budget:'$5,000 to $8,000', director:'Lisa Park',
+    status:'open', city:'sf',
+    roles:[
+      {title:'Lighting Technician',rate:'$400/day',desc:'Soft, warm lighting for food/product shots. Experience with diffusion.',applied:false},
+      {title:'Cinematographer',rate:'$500/day',desc:'Tabletop and food photography experience preferred. Macro lens work.',applied:false},
+    ]
+  },
+];
+
+// STATE
+let currentCrewFilter = 'all';
+let currentProjFilter = 'all';
+let lastScreen = 'home';
+let currentProfileId = null;
+let currentProjectId = null;
+let currentModalRole = null;
+let selectedStars = 0;
+
+// SVG ICONS
+const icon = {
+  pin: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  cal: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  dollar: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+  user: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+};
+
+function avatarFallback(el, initials) {
+  const div = document.createElement('div');
+  div.style.cssText = 'width:40px;height:40px;border-radius:50%;background:#242420;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#f0a020;border:2px solid rgba(255,255,255,0.08);flex-shrink:0';
+  div.textContent = initials;
+  el.parentNode.replaceChild(div, el);
+}
+
+function renderCrewCard(c) {
+  const statusCls = c.status==='available'?'badge-green':c.status==='on-project'?'badge-amber':'badge-red';
+  return `<div class="crew-card" onclick="showProfile('${c.id}')">
+    <img class="crew-card-cover" src="${c.cover}" alt="${c.name} cover" onerror="this.style.display='none'">
+    <div class="crew-card-body">
+      <div class="crew-card-top">
+        <div class="avatar"><img src="${c.photo}" alt="${c.name}" onerror="avatarFallback(this,'${c.initials}')"></div>
+        <div>
+          <div class="crew-name">${c.name}</div>
+          <span class="crew-role">${c.roles[0]}</span>
+          <span class="badge-avail ${statusCls}" style="margin-left:4px">${c.statusLabel}</span>
+        </div>
+      </div>
+      <div class="crew-meta">${icon.pin} ${c.location}</div>
+      <div><span class="stars">${c.stars}</span> <span style="font-size:11px;color:var(--text3)">${c.rating}</span></div>
+      <div class="crew-rate">${c.rate}</div>
+      <div class="tag-row">${c.skills.slice(0,3).map(s=>`<span class="tag">${s}</span>`).join('')}${c.skills.length>3?`<span class="tag">+${c.skills.length-3}</span>`:''}</div>
+    </div>
+  </div>`;
+}
+
+function renderProjectCard(p) {
+  return `<div class="project-card" onclick="showProject('${p.id}')">
+    <img class="project-card-cover" src="${p.cover}" alt="${p.title}" onerror="this.style.background='var(--bg3)'">
+    <div class="project-card-body">
+      <div class="project-tags">${p.tags.map(t=>`<span class="ptag ${t.cls}">${t.label}</span>`).join('')}</div>
+      <div class="project-title">${p.title}</div>
+      <div class="project-desc">${p.desc}</div>
+      <div class="project-meta">
+        <div class="meta-row">${icon.pin} ${p.location}</div>
+        <div class="meta-row">${icon.cal} ${p.dates}</div>
+        <div class="meta-row" style="color:var(--gold)">${icon.dollar} ${p.budget}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function initGrids() {
+  document.getElementById('home-crew-grid').innerHTML = crew.slice(0,4).map(renderCrewCard).join('');
+  document.getElementById('home-project-grid').innerHTML = projects.slice(0,3).map(renderProjectCard).join('');
+  document.getElementById('find-crew-grid').innerHTML = crew.map(renderCrewCard).join('');
+  document.getElementById('browse-project-grid').innerHTML = projects.map(renderProjectCard).join('');
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  const nl = document.getElementById('nl-'+id);
+  if (nl) nl.classList.add('active');
+  if (!['profile','project'].includes(id)) lastScreen = id;
+  window.scrollTo(0,0);
+}
+
+function goBack() { showScreen(lastScreen==='find'||lastScreen==='home'?'find':lastScreen); }
+function goBackProject() { showScreen(lastScreen==='browse'||lastScreen==='home'?'browse':lastScreen); }
+
+function showProfile(id) {
+  lastScreen = document.querySelector('.screen.active')?.id.replace('screen-','') || 'find';
+  currentProfileId = id;
+  const p = crew.find(c=>c.id===id);
+  document.getElementById('pf-initials').textContent = p.initials;
+  const avatarWrap = document.getElementById('pf-avatar-wrap');
+  avatarWrap.innerHTML = `<img src="${p.photo}" alt="${p.name}" onerror="avatarFallback(this,'${p.initials}')">`;
+  document.getElementById('pf-name').textContent = p.name;
+  const statusCls = p.status==='available'?'badge-green':p.status==='on-project'?'badge-amber':'badge-red';
+  const st = document.getElementById('pf-status');
+  st.textContent = p.statusLabel; st.className = `badge-avail ${statusCls}`;
+  document.getElementById('pf-roles').innerHTML = p.roles.map(r=>`<span class="crew-role" style="font-size:12px">${r}</span>`).join('');
+  document.getElementById('pf-location').textContent = `📍 ${p.location}`;
+  document.getElementById('pf-exp').textContent = `🎬 ${p.exp}`;
+  document.getElementById('pf-rate').textContent = p.rate;
+  document.getElementById('pf-stars').innerHTML = `<span class="stars">${p.stars}</span> ${p.rating}`;
+  const li = document.getElementById('pf-linkedin');
+  if (p.linkedin) { li.style.display='inline-flex'; li.href=p.linkedin; }
+  else { li.style.display='none'; }
+
+  document.getElementById('pf-body').innerHTML = `
+    <div class="profile-section">
+      <h4>About</h4>
+      <p style="font-size:13px;color:var(--text2);line-height:1.6">${p.about}</p>
+      <div class="tag-row" style="margin-top:12px">${p.skills.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
+    </div>
+    <div class="profile-section">
+      <h4>Details</h4>
+      <div class="detail-row"><span style="color:var(--text2)">Experience</span><span class="dval">Professional</span></div>
+      <div class="detail-row"><span style="color:var(--text2)">Projects</span><span class="dval">${p.projects}</span></div>
+      <div class="detail-row"><span style="color:var(--text2)">Available from</span><span class="dval">${p.avail}</span></div>
+      <div class="detail-row"><span style="color:var(--text2)">Day rate</span><span class="dval gold">${p.rate}</span></div>
+      ${p.linkedin?`<div class="detail-row"><span style="color:var(--text2)">LinkedIn</span><a href="${p.linkedin}" target="_blank" class="linkedin-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>View profile</a></div>`:''}
+    </div>
+    <div class="profile-section" style="grid-column:1/-1">
+      <h4>Equipment</h4>
+      <div class="tag-row">${p.equipment.map(e=>`<span class="tag">${e}</span>`).join('')}</div>
+    </div>
+  `;
+
+  const ratingsList = document.getElementById('pf-ratings-list');
+  ratingsList.innerHTML = p.ratings.map(r=>`
+    <div class="rating-item">
+      <div class="rating-meta">
+        <span class="rating-author">${r.author}</span>
+        <span class="rating-date">${r.date}</span>
+      </div>
+      <div class="rating-stars">${r.stars}</div>
+      <div class="rating-text">${r.text}</div>
+      <div class="rating-project">on ${r.project}</div>
+    </div>
+  `).join('');
+
+  selectedStars = 0;
+  updateStarUI();
+  showScreen('profile');
+}
+
+function showProject(id) {
+  lastScreen = document.querySelector('.screen.active')?.id.replace('screen-','') || 'browse';
+  currentProjectId = id;
+  const p = projects.find(pr=>pr.id===id);
+  document.getElementById('pd-cover').src = p.cover;
+  document.getElementById('pd-tags').innerHTML = p.tags.map(t=>`<span class="ptag ${t.cls}">${t.label}</span>`).join('');
+  document.getElementById('pd-title').textContent = p.title;
+  document.getElementById('pd-loc').innerHTML = `${icon.pin} ${p.location}`;
+  document.getElementById('pd-dates').innerHTML = `${icon.cal} ${p.dates}`;
+  document.getElementById('pd-budget').innerHTML = `${icon.dollar} ${p.budget}`;
+  document.getElementById('pd-director').innerHTML = `${icon.user} Director: ${p.director}`;
+  document.getElementById('pd-desc').textContent = p.desc;
+  document.getElementById('pd-roles-title').textContent = `Crew Roles Needed (${p.roles.length})`;
+  document.getElementById('pd-roles').innerHTML = p.roles.map((r,i)=>`
+    <div class="role-card">
+      <div class="role-card-top">
+        <span class="role-title">${r.title}</span>
+        <span class="role-rate">${r.rate} <span class="ptag-open ptag" style="margin-left:4px">Open</span></span>
+      </div>
+      <div class="role-desc">${r.desc}</div>
+      <button class="apply-btn ${r.applied?'applied':''}" id="apply-btn-${id}-${i}" onclick="openApplyModal('${id}',${i},'${r.title}','${p.title}')">${r.applied?'✓ Application sent':'Apply for this role'}</button>
+    </div>
+  `).join('');
+  showScreen('project');
+}
+
+function openApplyModal(projId, roleIdx, roleTitle, projectName) {
+  const proj = projects.find(p=>p.id===projId);
+  if (proj.roles[roleIdx].applied) return;
+  currentModalRole = {projId, roleIdx};
+  document.getElementById('modal-role-title').textContent = `Apply for: ${roleTitle}`;
+  document.getElementById('modal-project-name').textContent = projectName;
+  document.getElementById('modal-message').value = '';
+  document.getElementById('modal-reel').value = '';
+  document.getElementById('modal-rate').value = '';
+  document.getElementById('apply-modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('apply-modal').classList.remove('open'); }
+
+function submitApplication() {
+  if (!currentModalRole) return;
+  const {projId, roleIdx} = currentModalRole;
+  const proj = projects.find(p=>p.id===projId);
+  proj.roles[roleIdx].applied = true;
+  closeModal();
+  const btn = document.getElementById(`apply-btn-${projId}-${roleIdx}`);
+  if (btn) { btn.textContent = '✓ Application sent'; btn.classList.add('applied'); }
+  showToast('Application sent successfully!');
+}
+
+function setFilter(f) {
+  currentCrewFilter = f;
+  ['all','available','vancouver'].forEach(t=>{
+    document.getElementById('filter-'+t).classList.toggle('active',t===f);
+  });
+  filterCrew();
+}
+
+function setProjFilter(f) {
+  currentProjFilter = f;
+  ['all','open','vancouver'].forEach(t=>{
+    document.getElementById('pfilter-'+t)?.classList.toggle('active',t===f);
+  });
+  filterProjects();
+}
+
+function filterCrew() {
+  const q = document.getElementById('crew-search').value.toLowerCase();
+  let filtered = crew.filter(c=>{
+    const matchQ = !q || c.name.toLowerCase().includes(q) || c.roles.some(r=>r.toLowerCase().includes(q)) || c.location.toLowerCase().includes(q) || c.skills.some(s=>s.toLowerCase().includes(q));
+    const matchF = currentCrewFilter==='all' || (currentCrewFilter==='available'&&c.status==='available') || (currentCrewFilter==='vancouver'&&c.location.toLowerCase().includes('vancouver'));
+    return matchQ && matchF;
+  });
+  document.getElementById('find-crew-grid').innerHTML = filtered.length ? filtered.map(renderCrewCard).join('') : '<p style="color:var(--text3);padding:20px">No crew members found.</p>';
+  document.getElementById('crew-results-bar').textContent = `${filtered.length} crew member${filtered.length!==1?'s':''} found`;
+}
+
+function filterProjects() {
+  const q = document.getElementById('proj-search').value.toLowerCase();
+  let filtered = projects.filter(p=>{
+    const matchQ = !q || p.title.toLowerCase().includes(q) || p.location.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+    const matchF = currentProjFilter==='all' || (currentProjFilter==='open'&&p.status==='open') || (currentProjFilter==='vancouver'&&p.city==='vancouver');
+    return matchQ && matchF;
+  });
+  document.getElementById('browse-project-grid').innerHTML = filtered.length ? filtered.map(renderProjectCard).join('') : '<p style="color:var(--text3);padding:20px">No projects found.</p>';
+  document.getElementById('proj-results-bar').textContent = `${filtered.length} project${filtered.length!==1?'s':''} found`;
+}
+
+function setStar(n) {
+  selectedStars = n;
+  updateStarUI();
+}
+function updateStarUI() {
+  document.querySelectorAll('.star-btn').forEach((b,i)=>b.classList.toggle('lit',i<selectedStars));
+}
+function submitReview() {
+  const text = document.getElementById('review-text').value.trim();
+  if (!selectedStars || !text) { showToast('Please add a rating and review text.'); return; }
+  const p = crew.find(c=>c.id===currentProfileId);
+  const stars = '★'.repeat(selectedStars)+'☆'.repeat(5-selectedStars);
+  p.ratings.unshift({author:'You',date:'Jun 2026',stars,text,project:'Recent project'});
+  document.getElementById('review-text').value='';
+  selectedStars=0; updateStarUI();
+  const list = document.getElementById('pf-ratings-list');
+  list.innerHTML = p.ratings.map(r=>`
+    <div class="rating-item">
+      <div class="rating-meta"><span class="rating-author">${r.author}</span><span class="rating-date">${r.date}</span></div>
+      <div class="rating-stars">${r.stars}</div>
+      <div class="rating-text">${r.text}</div>
+      <div class="rating-project">on ${r.project}</div>
+    </div>
+  `).join('');
+  showToast('Review posted!');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+// POST PROJECT
+function submitProject() {
+  const allInputs = document.querySelectorAll('#screen-post .form-input, #screen-post .form-select, #screen-post .form-textarea');
+  const titleInput = allInputs[0];
+  const descInput = allInputs[1];
+  const locationInput = allInputs[3];
+
+  const title = titleInput ? titleInput.value.trim() : '';
+  const desc = descInput ? descInput.value.trim() : '';
+  const location = locationInput ? locationInput.value.trim() : '';
+  const typeSelect = document.querySelector('#screen-post .form-select');
+  const type = typeSelect ? typeSelect.value : '';
+
+  const newProject = {
+    id: 'user-' + Date.now(),
+    cover: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=700&h=350&fit=crop',
+    tags: [
+      {cls: type ? 'ptag-short' : 'ptag-short', label: type || 'Short Film'},
+      {cls: 'ptag-open', label: 'Open'}
+    ],
+    title: title || 'Untitled Project',
+    desc: desc || 'No description provided.',
+    location: location || 'Location TBD',
+    dates: 'Dates TBD',
+    budget: 'Budget TBD',
+    director: 'You',
+    status: 'open',
+    city: 'other',
+    roles: []
+  };
+
+  projects.unshift(newProject);
+  document.getElementById('browse-project-grid').innerHTML = projects.map(renderProjectCard).join('');
+  document.getElementById('home-project-grid').innerHTML = projects.slice(0,3).map(renderProjectCard).join('');
+  document.getElementById('proj-results-bar').textContent = projects.length + ' projects found';
+
+  allInputs.forEach(i => { if (i.tagName === 'SELECT') i.selectedIndex = 0; else i.value = ''; });
+
+  showToast('Project posted successfully!');
+  setTimeout(() => showScreen('browse'), 1000);
+}
+
+// AUTH MODALS
+function openLoginModal() { document.getElementById('login-modal').classList.add('open'); }
+function closeLoginModal() { document.getElementById('login-modal').classList.remove('open'); }
+function openSignupModal() { document.getElementById('signup-modal').classList.add('open'); }
+function closeSignupModal() { document.getElementById('signup-modal').classList.remove('open'); }
+
+function selectRole(role) {
+  const director = document.getElementById('role-director');
+  const crew = document.getElementById('role-crew');
+  if (role === 'director') {
+    director.style.border = '1px solid var(--gold)';
+    director.style.background = 'var(--gold-bg)';
+    crew.style.border = '1px solid var(--border)';
+    crew.style.background = 'transparent';
+  } else {
+    crew.style.border = '1px solid var(--gold)';
+    crew.style.background = 'var(--gold-bg)';
+    director.style.border = '1px solid var(--border)';
+    director.style.background = 'transparent';
+  }
+}
+
+// Close modals on overlay click
+document.getElementById('login-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeLoginModal();
+});
+document.getElementById('signup-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeSignupModal();
+});
+
+initGrids();
+</script>
+</body>
+</html>
