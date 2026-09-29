@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EXO-PDRN Centella Mask, create your mask</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+<div class="stage" id="stage">
+  <img class="leaf" src="assets/images/leaf-glow.webp" alt="">
+  <img class="pouch" id="pouch" src="assets/images/pouch.webp" alt="EXO-PDRN Centella sheet mask pouch, 30 mL">
+  <canvas id="c" aria-label="Interactive sheet mask. Touch each ingredient bubble to build the mask piece by piece." role="img"></canvas>
+  <div id="bubbles"></div>
+  <p class="hint" id="hint" aria-hidden="true">Touch a bubble to create your mask</p>
+  <div class="copy">
+    <p class="brand">R·MEDY MD at Vancouver Laser</p>
+    <h1>EXO-PDRN</h1>
+    <p class="name">Centella Mask</p>
+    <p class="zh">积雪草水光修护片膜</p>
+    <p class="lede">Hydrate, soothe and replenish in fifteen quiet minutes.</p>
+  </div>
+  <div class="card" id="card" aria-live="polite"></div>
+</div>
+
+<section id="actives">
+  <div class="wrap">
+    <h3>What's inside the sheet</h3>
+    <div class="actives" id="activeList"></div>
+  </div>
+</section>
+
+<section class="use" id="use">
+  <div class="wrap">
+    <h3>How to use it</h3>
+    <ol class="steps">
+      <li><strong>Cleanse and tone</strong><span>Start with clean skin.</span></li>
+      <li><strong>Apply the mask</strong><span>Smooth it over your face and relax for 10 to 15 minutes.</span></li>
+      <li><strong>Pat in the rest</strong><span>Remove the sheet and gently pat the remaining essence into your skin.</span></li>
+    </ol>
+    <p class="note">Made for everyday care. If you've just had a treatment, ask your clinician whether the mask fits your aftercare routine.</p>
+  </div>
+</section>
+
+<section class="price">
+  <div class="wrap">
+    <p class="big">$35<small>per mask</small></p>
+    <p class="deal">Take ten home and save 10%.</p>
+    <p class="fine">All mask sales are final.</p>
+    <p class="where">Ask for it at your next visit.</p>
+  </div>
+</section>
+<footer>Interactive prototype for internal review. Vancouver Laser &amp; Skin Care Centre.</footer>
+
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
